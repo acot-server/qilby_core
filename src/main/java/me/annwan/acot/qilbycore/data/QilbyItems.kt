@@ -33,7 +33,10 @@ object QilbyItems {
             .lang("Enigmatic Super-capacitor")
             .onRegister { item: ComponentItem ->
                 item.attachComponents(
-                    ElectricStats.createRechargeableBattery(320_000_000_000, GTValues.UEV)
+                    ElectricStats.createRechargeableBattery(
+                        320_000_000_000,
+                        GTValues.UEV
+                    )
                 )
             }
             .register()
