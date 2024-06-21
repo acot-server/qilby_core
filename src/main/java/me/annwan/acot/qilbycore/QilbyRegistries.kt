@@ -14,19 +14,19 @@ object QilbyRegistries {
 
     @JvmStatic
     fun registerMachine(
-        ignoredEvent : GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition>) {
+        @Suppress("UNUSED_PARAMETER") event : GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition>) {
         QilbyCore.LOGGER.info("Here registering Qilby's machines")
     }
     @JvmStatic
     fun registerMaterialRegistryEvent(
-        ignoredEvent : MaterialRegistryEvent
+        @Suppress("UNUSED_PARAMETER") event : MaterialRegistryEvent
     ) {
         QilbyCore.LOGGER.info("Here registering Qilby's material registry")
     }
 
     @JvmStatic
     fun registerMaterials(
-        ignoredEvent: MaterialEvent
+        @Suppress("UNUSED_PARAMETER") event: MaterialEvent
     ) {
         QilbyCore.LOGGER.info("Here registering Qilby's materials")
     }
