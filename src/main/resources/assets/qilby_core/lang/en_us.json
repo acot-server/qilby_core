@@ -1,5 +1,17 @@
 {
   "item.qilby_core.dark_matter_super_capacitor": "Dark Matter Super-Capacitor",
   "item.qilby_core.enigmatic_super_capacitor": "Enigmatic Super-Capacitor",
+  "item.qilby_core.phi_super_capacitor": "Phenomenal Super-Capacitor",
+  "item.qilby_core.sigma_super_capacitor": "Stellarite Infused Super-Capacitor",
+  "item.qilby_core.eliacube_capacitor": "Éliacube",
+  "item.qilby_core.eliasphere_capacitor": "Éliasphère",
+  "material.qilby_core.wakfu": "Wakfu",
+  "material.qilby_core.stasis": "Stasis",
+  "material.qilby_core.dark_matter": "Dark Matter",
+  "material.qilby_core.dark_energy": "Dark Energy",
+  "material.qilby_core.runic_stellarite": "Runic Stellarite",
+  "material.qilby_core.stellarite": "Stellarite",
+  "material.qilby_core.fabric_of_reality": "Fabric of Reality",
+  "material.qilby_core.engineering_alloy": "Engineering Alloy",
   "itemGroup.qilby_core.main": "Qilby Core"
 }
