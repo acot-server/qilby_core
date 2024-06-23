@@ -10,10 +10,9 @@ import com.tterrag.registrate.util.nullness.NonNullFunction
 import me.annwan.acot.qilbycore.QilbyRegistries.REGISTRATE
 import net.minecraft.world.item.Item
 
-
 object QilbyItems {
     @Suppress("UNUSED")
-    val oops = REGISTRATE.creativeModeTab { QilbyCreativeModTabs.MAIN_TAB }
+    val creativeTab = REGISTRATE.creativeModeTab { QilbyCreativeModTabs.MAIN_TAB }
     @Suppress("UNUSED")
     val BATTERY_DARK_MATTER_SUPER_CAPACITOR : ItemEntry<ComponentItem> =
         createItem("dark_matter_super_capacitor", ComponentItem::create)
@@ -47,7 +46,6 @@ object QilbyItems {
     ) : ItemBuilder<T, Registrate> {
         return REGISTRATE.item(name, factory)
     }
-
 
     fun init() = Unit
 }
