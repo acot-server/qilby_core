@@ -111,6 +111,76 @@ object QilbyItems {
         createItem("rushu_printed_circuit_board", ComponentItem::create)
             .lang("Rushu Printed Circuit Board")
             .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_LV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_lv", ComponentItem::create)
+            .lang("LV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_MV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_mv", ComponentItem::create)
+            .lang("MV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_HV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_hv", ComponentItem::create)
+            .lang("HV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_EV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_ev", ComponentItem::create)
+            .lang("EV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_IV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_iv", ComponentItem::create)
+            .lang("IV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_LUV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_luv", ComponentItem::create)
+            .lang("LuV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_ZPM : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_zpm", ComponentItem::create)
+            .lang("ZPM Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_UV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_uv", ComponentItem::create)
+            .lang("UV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_UHV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_uhv", ComponentItem::create)
+            .lang("UHV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_UEV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_uev", ComponentItem::create)
+            .lang("UEV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_UIV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_uiv", ComponentItem::create)
+            .lang("UIV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_UXV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_uxv", ComponentItem::create)
+            .lang("LV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_OPV : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_opv", ComponentItem::create)
+            .lang("OpV Shushu holder")
+            .register()
+    @Suppress("UNUSED")
+    val SHUSHU_CIRCUIT_MAX : ItemEntry<ComponentItem> =
+        createItem("shushu_circuit_max", ComponentItem::create)
+            .lang("MAX Shushu holder")
+            .register()
 
     private fun <T : Item> createItem(
         name: String,
