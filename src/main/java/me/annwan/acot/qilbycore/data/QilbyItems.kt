@@ -101,6 +101,16 @@ object QilbyItems {
         createItem("shukrute_printed_circuit_board", ComponentItem::create)
             .lang("Shukrute Printed Circuit Board")
             .register()
+    @Suppress("UNUSED")
+    val RUSHU_CIRCUIT_BOARD : ItemEntry<ComponentItem> =
+        createItem("rushu_circuit_board", ComponentItem::create)
+            .lang("Rushu Circuit Board")
+            .register()
+    @Suppress("UNUSED")
+    val RUSHU_PRINTED_CIRCUIT_BOARD : ItemEntry<ComponentItem> =
+        createItem("rushu_printed_circuit_board", ComponentItem::create)
+            .lang("Rushu Printed Circuit Board")
+            .register()
 
     private fun <T : Item> createItem(
         name: String,
