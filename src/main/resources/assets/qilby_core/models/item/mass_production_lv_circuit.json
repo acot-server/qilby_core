@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "qilby_core:item/unsoldered_lv_circuit_assembly"
+    "layer0": "qilby_core:item/mass_production_lv_circuit"
   }
 }
