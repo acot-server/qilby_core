@@ -88,6 +88,13 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven {
+        name = 'GTCEu Maven'
+        url = 'https://maven.gtceu.com'
+        content {
+            includeGroup 'com.gregtechceu.gtceu'
+        }
+    }
 }
 
 dependencies {
