@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "qilby_core:item/extreme_hi_pow_integrated_circuit"
+    }
+  }

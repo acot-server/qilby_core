@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "qilby_core:item/stasis_silicon_boule"
+    }
+  }
