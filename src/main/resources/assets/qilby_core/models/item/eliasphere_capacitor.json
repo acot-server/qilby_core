@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "qilby_core:item/eliasphere_capacitor"
+    "layer0": "qilby_core:item/dofus/1"
   }
 }
