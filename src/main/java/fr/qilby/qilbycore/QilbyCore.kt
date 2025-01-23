@@ -1,8 +1,9 @@
-package me.annwan.acot.qilbycore
+package fr.qilby.qilbycore
 
 import com.gregtechceu.gtceu.api.machine.MachineDefinition
 import com.gregtechceu.gtceu.utils.FormattingUtil
-import me.annwan.acot.qilbycore.init.CommonProxy
+import fr.qilby.qilbycore.data.QilbyMachines
+import fr.qilby.qilbycore.init.CommonProxy
 import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.eventbus.api.IEventBus
 import org.apache.logging.log4j.LogManager

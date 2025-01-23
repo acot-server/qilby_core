@@ -1,4 +1,4 @@
-package me.annwan.acot.qilbycore.data
+package fr.qilby.qilbycore.data
 import com.gregtechceu.gtceu.api.GTValues
 import com.gregtechceu.gtceu.api.item.ComponentItem
 import com.gregtechceu.gtceu.api.item.component.ElectricStats
@@ -6,7 +6,7 @@ import com.tterrag.registrate.Registrate
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.util.entry.ItemEntry
 import com.tterrag.registrate.util.nullness.NonNullFunction
-import me.annwan.acot.qilbycore.QilbyRegistries.REGISTRATE
+import fr.qilby.qilbycore.QilbyRegistries.REGISTRATE
 import net.minecraft.world.item.Item
 
 object QilbyItems {

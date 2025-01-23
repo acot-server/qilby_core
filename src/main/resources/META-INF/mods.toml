@@ -19,8 +19,7 @@ license = "${mod_license}"
     # Some more fluff displayed in the Mods panel. Plug your stuff here!
     authors="${mod_author}"
     description = '''
-Example Description
-...ain is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain,... (Lorem Ipsum translated to english.)
+    Suport mod for Greg's Factory 2
 '''
 
     [[dependencies."${mod_id}"]]

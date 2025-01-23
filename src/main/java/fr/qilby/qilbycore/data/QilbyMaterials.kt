@@ -1,10 +1,10 @@
-package me.annwan.acot.qilbycore.data
+package fr.qilby.qilbycore.data
 
 import com.gregtechceu.gtceu.api.GTValues
 import com.gregtechceu.gtceu.api.data.chemical.material.Material
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty
-import me.annwan.acot.qilbycore.QilbyCore
+import fr.qilby.qilbycore.QilbyCore
 import net.minecraft.resources.ResourceLocation
 
 

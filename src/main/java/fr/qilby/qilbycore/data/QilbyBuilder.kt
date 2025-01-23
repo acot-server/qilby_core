@@ -1,4 +1,4 @@
-package me.annwan.acot.qilbycore.data
+package fr.qilby.qilbycore.data
 
 import com.gregtechceu.gtceu.api.data.chemical.material.Material
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags.*

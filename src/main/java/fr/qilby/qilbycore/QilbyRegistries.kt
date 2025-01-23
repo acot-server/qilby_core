@@ -1,4 +1,4 @@
-package me.annwan.acot.qilbycore
+package fr.qilby.qilbycore
 
 import com.gregtechceu.gtceu.api.GTCEuAPI
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent
@@ -6,7 +6,8 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEv
 import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry
 import com.gregtechceu.gtceu.api.machine.MachineDefinition
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate
-import me.annwan.acot.qilbycore.data.QilbyMaterials
+import fr.qilby.qilbycore.data.QilbyMachines
+import fr.qilby.qilbycore.data.QilbyMaterials
 import net.minecraft.resources.ResourceLocation
 
 object QilbyRegistries {
@@ -19,6 +20,7 @@ object QilbyRegistries {
     @JvmStatic
     fun registerMachine(
         @Suppress("UNUSED_PARAMETER") event : GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition>) {
+        QilbyMachines.init()
         QilbyCore.LOGGER.info("Here registering Qilby's machines")
     }
     @JvmStatic

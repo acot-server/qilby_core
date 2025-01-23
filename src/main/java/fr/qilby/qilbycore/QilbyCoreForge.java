@@ -1,4 +1,4 @@
-package me.annwan.acot.qilbycore;
+package fr.qilby.qilbycore;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

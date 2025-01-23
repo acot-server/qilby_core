@@ -1,9 +1,9 @@
-package me.annwan.acot.qilbycore.data
+package fr.qilby.qilbycore.data
 
 import com.gregtechceu.gtceu.common.data.GTCreativeModeTabs
 import com.tterrag.registrate.util.entry.RegistryEntry
-import me.annwan.acot.qilbycore.QilbyCore.id
-import me.annwan.acot.qilbycore.QilbyRegistries
+import fr.qilby.qilbycore.QilbyCore.id
+import fr.qilby.qilbycore.QilbyRegistries
 import net.minecraft.world.item.CreativeModeTab
 
 object QilbyCreativeModTabs {
