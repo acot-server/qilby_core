@@ -251,6 +251,86 @@ object QilbyItems {
         createItem("infinity_hi_pow_integrated_circuit", ComponentItem::create)
             .lang("Infinity Hi-Power Integrated Circuit")
             .register()
+    @Suppress("UNUSED")
+    val ENIGMATIC_PROCESSOR : ItemEntry<ComponentItem> =
+        createItem("enigmatic_processor", ComponentItem::create)
+            .lang("Enigmatic Processor")
+            .register()
+    @Suppress("UNUSED")
+    val ENIGMATIC_PROCESSOR_ASSEMBLY : ItemEntry<ComponentItem> =
+        createItem("enigmatic_processor_assembly", ComponentItem::create)
+            .lang("Enigmatic Processor Assembly")
+            .register()
+    @Suppress("UNUSED")
+    val ENIGMATIC_PROCESSOR_COMPUTER : ItemEntry<ComponentItem> =
+        createItem("enigmatic_processor_computer", ComponentItem::create)
+            .lang("Enigmatic Supercomputer")
+            .register()
+    @Suppress("UNUSED")
+    val ENIGMATIC_PROCESSOR_MAINFRAME : ItemEntry<ComponentItem> =
+        createItem("enigmatic_processor_mainframe", ComponentItem::create)
+            .lang("Enigmatic Mainframe")
+            .register()
+    @Suppress("UNUSED")
+    val OPTICAL_PROCESSOR : ItemEntry<ComponentItem> =
+        createItem("optical_processor", ComponentItem::create)
+            .lang("Optical Processor")
+            .register()
+    @Suppress("UNUSED")
+    val OPTICAL_PROCESSOR_ASSEMBLY : ItemEntry<ComponentItem> =
+        createItem("optical_processor_assembly", ComponentItem::create)
+            .lang("Optical Processor Assembly")
+            .register()
+    @Suppress("UNUSED")
+    val OPTICAL_PROCESSOR_COMPUTER : ItemEntry<ComponentItem> =
+        createItem("optical_processor_computer", ComponentItem::create)
+            .lang("Optical Supercomputer")
+            .register()
+    @Suppress("UNUSED")
+    val OPTICAL_PROCESSOR_MAINFRAME : ItemEntry<ComponentItem> =
+        createItem("optical_processor_mainframe", ComponentItem::create)
+            .lang("Optical Mainframe")
+            .register()
+    @Suppress("UNUSED")
+    val CHRONAL_PROCESSOR : ItemEntry<ComponentItem> =
+        createItem("chronal_processor", ComponentItem::create)
+            .lang("Chronal Processor")
+            .register()
+    @Suppress("UNUSED")
+    val CHRONAL_PROCESSOR_ASSEMBLY : ItemEntry<ComponentItem> =
+        createItem("chronal_processor_assembly", ComponentItem::create)
+            .lang("Chronal Processor Assembly")
+            .register()
+    @Suppress("UNUSED")
+    val CHRONAL_PROCESSOR_COMPUTER : ItemEntry<ComponentItem> =
+        createItem("chronal_processor_computer", ComponentItem::create)
+            .lang("Chronal Supercomputer")
+            .register()
+    @Suppress("UNUSED")
+    val CHRONAL_PROCESSOR_MAINFRAME : ItemEntry<ComponentItem> =
+        createItem("chronal_processor_mainframe", ComponentItem::create)
+            .lang("Chronal Mainframe")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_PROCESSOR : ItemEntry<ComponentItem> =
+        createItem("supracausal_processor", ComponentItem::create)
+            .lang("Supracausal Processor")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_PROCESSOR_ASSEMBLY : ItemEntry<ComponentItem> =
+        createItem("supracausal_processor_assembly", ComponentItem::create)
+            .lang("Supracausal Processor Assembly")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_PROCESSOR_COMPUTER : ItemEntry<ComponentItem> =
+        createItem("supracausal_processor_computer", ComponentItem::create)
+            .lang("Supracausal Supercomputer")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_PROCESSOR_MAINFRAME : ItemEntry<ComponentItem> =
+        createItem("supracausal_processor_mainframe", ComponentItem::create)
+            .lang("Supracausal Mainframe")
+            .register()
 
     private fun <T : Item> createItem(
         name: String,
