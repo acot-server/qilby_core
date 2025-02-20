@@ -331,6 +331,36 @@ object QilbyItems {
         createItem("supracausal_processor_mainframe", ComponentItem::create)
             .lang("Supracausal Mainframe")
             .register()
+    @Suppress("UNUSED")
+    val PERFECT_NANO_MERGER : ItemEntry<ComponentItem> =
+        createItem("perfect_nano_merger", ComponentItem::create)
+            .lang("Perfect nano optical merger")
+            .register()
+    @Suppress("UNUSED")
+    val PERFECT_NANO_SPLITTER : ItemEntry<ComponentItem> =
+        createItem("perfect_nano_splitter", ComponentItem::create)
+            .lang("Perfect nano optical splitter")
+            .register()
+    @Suppress("UNUSED")
+    val PERFECT_OPTIC_FIBER : ItemEntry<ComponentItem> =
+        createItem("perfect_optic_fiber", ComponentItem::create)
+            .lang("Perfect nano optical fiber node")
+            .register()
+    @Suppress("UNUSED")
+    val HI_PULSE_CONVERTER : ItemEntry<ComponentItem> =
+        createItem("hi_pulse_converter", ComponentItem::create)
+            .lang("High pulse rate signal converter")
+            .register()
+    @Suppress("UNUSED")
+    val OPTICAL_CIRCUIT_BOARD : ItemEntry<ComponentItem> =
+        createItem("optical_circuit_board", ComponentItem::create)
+            .lang("Optical circuit board")
+            .register()
+    @Suppress("UNUSED")
+    val OPTICAL_COMP_CIRCUIT : ItemEntry<ComponentItem> =
+        createItem("optical_coputation_circuit", ComponentItem::create)
+            .lang("Optical computation circuit plate")
+            .register()
 
     private fun <T : Item> createItem(
         name: String,

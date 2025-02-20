@@ -19,6 +19,8 @@ class QilbyMaterials private constructor(resourceLocation: ResourceLocation) : M
         lateinit var RunicStellarite : Material
         lateinit var Stellarite : Material
         lateinit var FabricOfReality : Material
+        //New Glass
+        lateinit var PureGlass : Material
         // Early Game Materials
         lateinit var EngineeringAlloy : Material
         lateinit var SolderingFlux : Material
@@ -100,9 +102,16 @@ class QilbyMaterials private constructor(resourceLocation: ResourceLocation) : M
                 .fluidPipeProperties(400,100,true, false, false, false)
                 .buildAndRegister()
 
+
             SolderingFlux = Builder("soldering_flux")
                 .fluid()
                 .color(0xFFFFAA)
+                .buildAndRegister()
+
+            PureGlass = Builder("pure_glass")
+                .fluid()
+                .gem()
+                .color(0xc9e2e5)
                 .buildAndRegister()
 
         }
