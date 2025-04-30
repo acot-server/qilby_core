@@ -361,6 +361,41 @@ object QilbyItems {
         createItem("optical_coputation_circuit", ComponentItem::create)
             .lang("Optical computation circuit plate")
             .register()
+    @Suppress("UNUSED")
+    val INTEGRATED_MAINFRAME: ItemEntry<ComponentItem> =
+        createItem("integrated_mainframe", ComponentItem::create)
+            .lang("Integrated mainframe")
+            .register()
+    @Suppress("UNUSED")
+    val MULTIVERSAL_PROCESSOR: ItemEntry<ComponentItem> =
+        createItem("multiversal_processor", ComponentItem::create)
+            .lang("Multiversal Processor")
+            .register()
+    @Suppress("UNUSED")
+    val MULTIVERSAL_PROCESSOR_ASSEMBLY: ItemEntry<ComponentItem> =
+        createItem("multiversal_processor_assembly", ComponentItem::create)
+            .lang("Multiversal Processor Assembly")
+            .register()
+    @Suppress("UNUSED")
+    val MULTIVERSAL_SUPERCOMPUTER: ItemEntry<ComponentItem> =
+        createItem("multiversal_supercomputer", ComponentItem::create)
+            .lang("Multiversal Supercomputer")
+            .register()
+    @Suppress("UNUSED")
+    val OMNIVERSAL_PROCESSOR: ItemEntry<ComponentItem> =
+        createItem("multiversal_processor", ComponentItem::create)
+            .lang("Multiversal Processor")
+            .register()
+    @Suppress("UNUSED")
+    val OMNIVERSAL_PROCESSOR_ASSEMBLY: ItemEntry<ComponentItem> =
+        createItem("multiversal_processor_assembly", ComponentItem::create)
+            .lang("Multiversal Processor Assembly")
+            .register()
+    @Suppress("UNUSED")
+    val OMNIVERSAL_SUPERCOMPUTER: ItemEntry<ComponentItem> =
+        createItem("multiversal_supercomputer", ComponentItem::create)
+            .lang("Multiversal Supercomputer")
+            .register()
 
     private fun <T : Item> createItem(
         name: String,
