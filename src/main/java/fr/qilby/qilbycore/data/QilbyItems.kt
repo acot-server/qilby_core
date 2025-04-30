@@ -383,17 +383,17 @@ object QilbyItems {
             .register()
     @Suppress("UNUSED")
     val OMNIVERSAL_PROCESSOR: ItemEntry<ComponentItem> =
-        createItem("multiversal_processor", ComponentItem::create)
+        createItem("omniversal_processor", ComponentItem::create)
             .lang("Multiversal Processor")
             .register()
     @Suppress("UNUSED")
     val OMNIVERSAL_PROCESSOR_ASSEMBLY: ItemEntry<ComponentItem> =
-        createItem("multiversal_processor_assembly", ComponentItem::create)
+        createItem("omniversal_processor_assembly", ComponentItem::create)
             .lang("Multiversal Processor Assembly")
             .register()
     @Suppress("UNUSED")
     val OMNIVERSAL_SUPERCOMPUTER: ItemEntry<ComponentItem> =
-        createItem("multiversal_supercomputer", ComponentItem::create)
+        createItem("omniversal_supercomputer", ComponentItem::create)
             .lang("Multiversal Supercomputer")
             .register()
 
