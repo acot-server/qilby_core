@@ -95,5 +95,31 @@
   "block.qilby_core.hpca_cooler_fluid_uiv": "HPCA Liquid Cooler MK.V",
   "block.qilby_core.hpca_cooler_fluid_uxv": "HPCA Liquid Cooler MK.VI",
   "block.qilby_core.hpca_cooler_fluid_opv": "HPCA Liquid Cooler MK.VII",
-  "block.qilby_core.hpca_cooler_fluid_max": "HPCA Liquid Cooler MK.VIII"
+  "block.qilby_core.hpca_cooler_fluid_max": "HPCA Liquid Cooler MK.VIII",
+
+  "block.gtceu.lv_energy_input_hatch_4a": "LV 4A Energy Hatch",
+  "block.gtceu.mv_energy_input_hatch_4a": "MV 4A Energy Hatch",
+  "block.gtceu.hv_energy_input_hatch_4a": "HV 4A Energy Hatch",
+
+  "block.gtceu.opv_substation_input_hatch_256a": "OpV 256A Substation Energy Hatch",
+  "block.gtceu.max_substation_input_hatch_256a": "MAX 256A Substation Energy Hatch",
+  "block.gtceu.opv_substation_output_hatch_256a": "OpV 256A Substation Dynamo Hatch",
+  "block.gtceu.max_substation_output_hatch_256a": "MAX 256A Substation Dynamo Hatch",
+
+  "block.gtceu.max_substation_input_hatch_1024a": "MAX 1024A Substation Energy Hatch",
+  "block.gtceu.opv_substation_input_hatch_1024a": "OpV 1024A Substation Energy Hatch",
+  "block.gtceu.opv_substation_output_hatch_1024a": "OpV 1024A Substation Dynamo Hatch",
+  "block.gtceu.max_substation_output_hatch_1024a": "MAX 1024A Substation Dynamo Hatch",
+
+  "block.gtceu.max_diode": "MAX Diode",
+
+  "block.gtceu.max_256a_laser_source_hatch": "MAX 256A Laser Source Hatch",
+  "block.gtceu.max_1024a_laser_source_hatch": "MAX 1024A Laser Source Hatch",
+  "block.gtceu.max_4096a_laser_source_hatch": "MAX 4096A Laser Source Hatch",
+  "block.gtceu.max_16384a_laser_source_hatch": "MAX 16384A Laser Source Hatch",
+
+  "block.gtceu.max_256a_laser_target_hatch": "MAX 256A Laser Target Hatch",
+  "block.gtceu.max_1024a_laser_target_hatch": "MAX 1024A Laser Target Hatch",
+  "block.gtceu.max_4096a_laser_target_hatch": "MAX 4096A Laser Target Hatch",
+  "block.gtceu.max_16384a_laser_target_hatch": "MAX 16384A Laser Target Hatch"
 }

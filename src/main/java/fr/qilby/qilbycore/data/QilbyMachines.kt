@@ -2,17 +2,28 @@ package fr.qilby.qilbycore.data
 
 import com.gregtechceu.gtceu.GTCEu
 import com.gregtechceu.gtceu.api.GTValues
+import com.gregtechceu.gtceu.api.capability.recipe.IO
 import com.gregtechceu.gtceu.api.data.RotationState
 import com.gregtechceu.gtceu.api.machine.MachineDefinition
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder
+import com.gregtechceu.gtceu.client.renderer.machine.DiodeRenderer
 import com.gregtechceu.gtceu.client.renderer.machine.HPCAPartRenderer
 import com.gregtechceu.gtceu.common.data.GTMaterials
+import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils
+import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.registerLaserHatch
+import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.registerTieredMachines
 import com.gregtechceu.gtceu.common.data.machines.GTResearchMachines.OVERHEAT_TOOLTIPS
+import com.gregtechceu.gtceu.common.machine.multiblock.part.DiodePartMachine
+import com.gregtechceu.gtceu.common.machine.multiblock.part.EnergyHatchPartMachine
+import com.gregtechceu.gtceu.common.machine.multiblock.part.LaserHatchPartMachine
+import com.gregtechceu.gtceu.integration.kjs.recipe.components.GTRecipeComponents.OUT
+import com.gregtechceu.gtceu.utils.FormattingUtil
 import fr.qilby.qilbycore.QilbyRegistries.REGISTRATE
 import fr.qilby.qilbycore.multiblock.part.HPCAGenericComputationPartMachine
 import fr.qilby.qilbycore.multiblock.part.HPCAGenericCoolingPartMachine
 import net.minecraft.network.chat.Component
+
 
 object QilbyMachines {
 
@@ -202,6 +213,142 @@ object QilbyMachines {
         coolant = 30
     ).register()
 
+    val ENERGY_INPUT_HATCH_4A_LOW_TIER =
+        GTMachineUtils.registerTieredMachines(
+            "energy_input_hatch_4a",
+            {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.IN, 4)},
+            {tier, builder ->
+                builder
+                    .langValue(GTValues.VNF[tier] + " Energy Hatch")
+                    .rotationState(RotationState.ALL)
+                    .abilities(PartAbility.INPUT_ENERGY)
+                    .tooltips(
+                        Component.translatable("gtceu.universal.tooltip.voltage_in",
+                            FormattingUtil.formatNumbers(GTValues.V[tier]), GTValues.VNF[tier]),
+                        Component.translatable("gtceu.universal.tooltip.amperage_in", 4),
+                        Component.translatable("gtceu.universal.tooltip.energy_storage_capacity",
+                            FormattingUtil.formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 4))),
+                        Component.translatable("gtceu.machine.energy_hatch.input_hi_amp.tooltip"))
+                    .overlayTieredHullRenderer("energy_hatch.input_4a")
+                    .register()
+            },
+            *GTValues.tiersBetween(GTValues.LV, GTValues.HV))
+
+    val SUBSTATION_INPUT_HATCH_256 = GTMachineUtils.registerTieredMachines("substation_input_hatch_256a",
+        {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.IN, 256)},
+        {tier, builder -> builder
+            .langValue(GTValues.VNF[tier] + " 256A Substation Energy Hatch")
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.SUBSTATION_INPUT_ENERGY)
+            .tooltips(Component.translatable("gtceu.universal.tooltip.voltage_in",
+                FormattingUtil.formatNumbers(GTValues.V[tier]), GTValues.VNF[tier]),
+                Component.translatable("gtceu.universal.tooltip.amperage_in", 256),
+                Component.translatable("gtceu.universal.tooltip.energy_storage_capacity",
+                    FormattingUtil
+                        .formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 256))),
+                Component.translatable("gtceu.machine.substation_hatch.input.tooltip")
+            )
+            .overlayTieredHullRenderer("energy_hatch.input_64a")
+            .register()},
+        GTValues.OpV, GTValues.MAX)
+
+    val SUBSTATION_OUTPUT_HATCH_256 = GTMachineUtils.registerTieredMachines("substation_output_hatch_256a",
+        {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.OUT, 256)},
+        {tier, builder -> builder
+            .langValue(GTValues.VNF[tier] + " 256A Substation Dynamo Hatch")
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.SUBSTATION_INPUT_ENERGY)
+            .tooltips(Component.translatable("gtceu.universal.tooltip.voltage_out",
+                FormattingUtil.formatNumbers(GTValues.V[tier]), GTValues.VNF[tier]),
+                Component.translatable("gtceu.universal.tooltip.amperage_out", 256),
+                Component.translatable("gtceu.universal.tooltip.energy_storage_capacity",
+                    FormattingUtil
+                        .formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 256))),
+                Component.translatable("gtceu.machine.substation_hatch.output.tooltip")
+            )
+            .overlayTieredHullRenderer("energy_hatch.output_64a")
+            .register()},
+        GTValues.OpV, GTValues.MAX)
+
+    val SUBSTATION_INPUT_HATCH_1024 = GTMachineUtils.registerTieredMachines("substation_input_hatch_1024a",
+        {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.IN, 1024)},
+        {tier, builder -> builder
+            .langValue(GTValues.VNF[tier] + " 1024A Substation Energy Hatch")
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.SUBSTATION_INPUT_ENERGY)
+            .tooltips(Component.translatable("gtceu.universal.tooltip.voltage_in",
+                FormattingUtil.formatNumbers(GTValues.V[tier]), GTValues.VNF[tier]),
+                Component.translatable("gtceu.universal.tooltip.amperage_in", 1024),
+                Component.translatable("gtceu.universal.tooltip.energy_storage_capacity",
+                    FormattingUtil
+                        .formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 1024))),
+                Component.translatable("gtceu.machine.substation_hatch.input.tooltip")
+            )
+            .overlayTieredHullRenderer("energy_hatch.input_64a")
+            .register()},
+        GTValues.OpV, GTValues.MAX)
+
+    val SUBSTATION_OUTPUT_HATCH_1024 = GTMachineUtils.registerTieredMachines("substation_output_hatch_1024a",
+        {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.OUT, 1024)},
+        {tier, builder -> builder
+            .langValue(GTValues.VNF[tier] + " 1024A Substation Dynamo Hatch")
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.SUBSTATION_INPUT_ENERGY)
+            .tooltips(Component.translatable("gtceu.universal.tooltip.voltage_out",
+                FormattingUtil.formatNumbers(GTValues.V[tier]), GTValues.VNF[tier]),
+                Component.translatable("gtceu.universal.tooltip.amperage_out", 1024),
+                Component.translatable("gtceu.universal.tooltip.energy_storage_capacity",
+                    FormattingUtil
+                        .formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 1024))),
+                Component.translatable("gtceu.machine.substation_hatch.output.tooltip")
+            )
+            .overlayTieredHullRenderer("energy_hatch.output_64a")
+            .register()},
+        GTValues.OpV, GTValues.MAX)
+
+    val DIODE_MAX: Array<MachineDefinition> = registerTieredMachines("diode",
+        { holder, tier -> DiodePartMachine(holder, tier)},
+        { tier, builder -> builder
+                .langValue(GTValues.VNF[tier] + " Diode")
+                .rotationState(RotationState.ALL)
+                .abilities(PartAbility.PASSTHROUGH_HATCH)
+                .renderer { DiodeRenderer(tier) }
+                .tooltips(
+                    Component.translatable("gtceu.machine.diode.tooltip_general"),
+                    Component.translatable("gtceu.machine.diode.tooltip_starts_at"),
+                    Component.translatable("gtceu.universal.tooltip.voltage_in_out",
+                        FormattingUtil.formatNumbers(GTValues.V[tier]),
+                        GTValues.VNF[tier]),
+                    Component.translatable(
+                        "gtceu.universal.tooltip.amperage_in_out_till",
+                        DiodePartMachine.MAX_AMPS))
+                .register()},
+        GTValues.MAX)
+
+    val LASER_INPUT_HATCH_256: Array<MachineDefinition> = registerMaxLaserHatch(
+        IO.IN, 256, PartAbility.INPUT_LASER)
+
+    val LASER_OUTPUT_HATCH_256: Array<MachineDefinition> = registerMaxLaserHatch(
+        IO.OUT, 256, PartAbility.OUTPUT_LASER)
+
+    val LASER_INPUT_HATCH_1024: Array<MachineDefinition> = registerMaxLaserHatch(
+        IO.IN, 1024, PartAbility.INPUT_LASER)
+
+    val LASER_OUTPUT_HATCH_1024: Array<MachineDefinition> = registerMaxLaserHatch(
+        IO.OUT, 1024, PartAbility.OUTPUT_LASER)
+
+    val LASER_INPUT_HATCH_4096: Array<MachineDefinition> = registerMaxLaserHatch(
+        IO.IN, 4096, PartAbility.INPUT_LASER)
+
+    val LASER_OUTPUT_HATCH_4096: Array<MachineDefinition> = registerMaxLaserHatch(
+        IO.OUT, 4096, PartAbility.OUTPUT_LASER)
+
+    val LASER_INPUT_HATCH_16384: Array<MachineDefinition> = registerMaxLaserHatch(
+        IO.IN, 16384, PartAbility.INPUT_LASER)
+
+    val LASER_OUTPUT_HATCH_16384: Array<MachineDefinition> = registerMaxLaserHatch(
+        IO.OUT, 16384, PartAbility.OUTPUT_LASER)
+
     private fun mkHPCACoolantPart(
         name: String,
         upkeep: Int,
@@ -218,8 +365,7 @@ object QilbyMachines {
             .tooltips(
                 Component.translatable("gtceu.machine.hpca.component_general.max_eut", upkeep),
                 Component.translatable(if (coolant == 0) "gtceu.machine.hpca.component_type.cooler_passive" else "gtceu.machine.hpca.component_type.cooler_active"),
-                Component.translatable("gtceu.machine.hpca.component_type.cooler_cooling", cooling)
-            )
+                Component.translatable("gtceu.machine.hpca.component_type.cooler_cooling", cooling))
         if (coolant != 0) {
             x = x.tooltips(Component.translatable(
                 "gtceu.machine.hpca.component_type.cooler_active_coolant",
@@ -227,6 +373,42 @@ object QilbyMachines {
             ))
         }
         return x
+    }
+
+
+    fun registerMaxLaserHatch(io: IO, amperage: Int, ability: PartAbility): Array<MachineDefinition> {
+        val name = if (io == IO.IN) "target" else "source"
+        return registerTieredMachines(
+            amperage.toString() + "a_laser_" + name + "_hatch",
+            { holder, tier -> LaserHatchPartMachine(holder, io, tier, amperage)},
+            { tier, builder -> builder
+                    .langValue(
+                        GTValues.VNF[tier] + "§r " + FormattingUtil.formatNumbers(amperage) +
+                                "§eA§r Laser " + FormattingUtil.toEnglishName(name) + " Hatch")
+                    .rotationState(RotationState.ALL)
+                    .tooltips(
+                        Component.translatable("gtceu.machine.laser_hatch.$name.tooltip"),
+                        Component.translatable("gtceu.machine.laser_hatch.both.tooltip"),
+                        Component.translatable(
+                            "gtceu.universal.tooltip.voltage_" + (if (io == IO.IN) "in" else "out"),
+                            FormattingUtil.formatNumbers(GTValues.V[tier]), GTValues.VNF[tier]
+                        ),
+                        Component.translatable("gtceu.universal.tooltip.amperage_in", amperage),
+                        Component.translatable(
+                            "gtceu.universal.tooltip.energy_storage_capacity",
+                            FormattingUtil
+                                .formatNumbers(
+                                    EnergyHatchPartMachine.getHatchEnergyCapacity(tier!!, amperage)
+                                )
+                        ),
+                        Component.translatable("gtceu.universal.disabled")
+                    )
+                    .abilities(ability)
+                    .overlayTieredHullRenderer("laser_hatch.$name")
+                    .register()
+            },
+            GTValues.MAX
+        )
     }
 
     fun init() {
