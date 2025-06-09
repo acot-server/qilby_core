@@ -396,6 +396,31 @@ object QilbyItems {
         createItem("omniversal_supercomputer", ComponentItem::create)
             .lang("Multiversal Supercomputer")
             .register()
+    @Suppress("UNUSED")
+    val RAW_UNSTABLE_CHRONITON: ItemEntry<ComponentItem> =
+        createItem("raw_unstable_chroniton", ComponentItem::create)
+            .lang("Raw Unstable Chroniton")
+            .register()
+    @Suppress("UNUSED")
+    val UNSTABLE_CHRONITON: ItemEntry<ComponentItem> =
+        createItem("unstable_chroniton", ComponentItem::create)
+            .lang("Unstable Chroniton")
+            .register()
+    @Suppress("UNUSED")
+    val POOR_STABILIZED_CHRONITON: ItemEntry<ComponentItem> =
+        createItem("poor_stabilized_chroniton", ComponentItem::create)
+            .lang("Poor Stabilized Chroniton")
+            .register()
+    @Suppress("UNUSED")
+    val STABILIZED_CHRONITON: ItemEntry<ComponentItem> =
+        createItem("stabilized_chroniton", ComponentItem::create)
+            .lang("Stabilized Chroniton")
+            .register()
+    @Suppress("UNUSED")
+    val ULTRA_STABILIZED_CHRONITON: ItemEntry<ComponentItem> =
+        createItem("ultra_stabilized_chroniton", ComponentItem::create)
+            .lang("Ultra Stabilized Chroniton")
+            .register()
 
     private fun <T : Item> createItem(
         name: String,

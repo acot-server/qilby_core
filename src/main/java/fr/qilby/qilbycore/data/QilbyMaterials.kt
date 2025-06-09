@@ -2,6 +2,7 @@ package fr.qilby.qilbycore.data
 
 import com.gregtechceu.gtceu.api.GTValues
 import com.gregtechceu.gtceu.api.data.chemical.material.Material
+import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialFlags
 import com.gregtechceu.gtceu.api.data.chemical.material.info.MaterialIconSet
 import com.gregtechceu.gtceu.api.data.chemical.material.properties.BlastProperty
 import fr.qilby.qilbycore.QilbyCore
@@ -24,6 +25,9 @@ class QilbyMaterials private constructor(resourceLocation: ResourceLocation) : M
         // Early Game Materials
         lateinit var EngineeringAlloy : Material
         lateinit var SolderingFlux : Material
+        // Polymer
+        lateinit var TransparentAluminium : Material
+
         fun init() {
             Wakfu = Builder("wakfu")
                 .generateAllParts()
@@ -59,6 +63,7 @@ class QilbyMaterials private constructor(resourceLocation: ResourceLocation) : M
                 .fluid()
                 .color(0x202040).iconSet(MaterialIconSet.SHINY)
                 .blastTemp(12_000, BlastProperty.GasTier.HIGHEST, 8_000_000,200)
+                .rotorStats(500, 400, 20f, 1000000)
                 .cableProperties(GTValues.V[GTValues.UIV], 4, 64, false)
                 .buildAndRegister()
 
@@ -69,6 +74,7 @@ class QilbyMaterials private constructor(resourceLocation: ResourceLocation) : M
                 .fluid()
                 .color(0xD11A1A).iconSet(MaterialIconSet.SHINY)
                 .blastTemp(25_000, BlastProperty.GasTier.HIGHEST, 32_000_000,200)
+                .rotorStats(500, 450, 20f, 1500000)
                 .cableProperties(GTValues.V[GTValues.UXV], 4, 128, false)
                 .buildAndRegister()
 
@@ -90,6 +96,7 @@ class QilbyMaterials private constructor(resourceLocation: ResourceLocation) : M
                 .fluid()
                 .color(0xCF2CAB).iconSet(MaterialIconSet.SHINY)
                 .blastTemp(80_000, BlastProperty.GasTier.HIGHEST, 512_000_000,200)
+                .rotorStats(500, 500, 25f, 2000000)
                 .cableProperties(GTValues.V[GTValues.MAX], 256, 0, false)
                 .fluidPipeProperties(5_000_000, 500_000,true,true,true,true)
                 .buildAndRegister()
@@ -102,6 +109,13 @@ class QilbyMaterials private constructor(resourceLocation: ResourceLocation) : M
                 .fluidPipeProperties(400,100,true, false, false, false)
                 .buildAndRegister()
 
+            TransparentAluminium = Builder("transparent_aluminium")
+                .fluid()
+                .ingot()
+                .polymer()
+                .flags(MaterialFlags.GENERATE_PLATE, MaterialFlags.GENERATE_FOIL)
+                .color(0x85A6AA)
+                .buildAndRegister()
 
             SolderingFlux = Builder("soldering_flux")
                 .fluid()
