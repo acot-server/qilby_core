@@ -421,6 +421,89 @@ object QilbyItems {
         createItem("ultra_stabilized_chroniton", ComponentItem::create)
             .lang("Ultra Stabilized Chroniton")
             .register()
+    @Suppress("UNUSED")
+    val QUANTUM_SMD_RESISTOR: ItemEntry<ComponentItem> =
+        createItem("quantum_smd_resistor", ComponentItem::create)
+            .lang("Quantum SMD Resistor")
+            .register()
+    @Suppress("UNUSED")
+    val QUANTUM_SMD_DIODE: ItemEntry<ComponentItem> =
+        createItem("quantum_smd_diode", ComponentItem::create)
+            .lang("Quantum SMD Diode")
+            .register()
+    @Suppress("UNUSED")
+    val QUANTUM_SMD_TRANSISTOR: ItemEntry<ComponentItem> =
+        createItem("quantum_smd_transistor", ComponentItem::create)
+            .lang("Quantum SMD Transistor")
+            .register()
+    @Suppress("UNUSED")
+    val QUANTUM_SMD_CAPACITOR: ItemEntry<ComponentItem> =
+        createItem("quantum_smd_capacitor", ComponentItem::create)
+            .lang("Quantum SMD Capacitor")
+            .register()
+    @Suppress("UNUSED")
+    val QUANTUM_SMD_INDUCTOR: ItemEntry<ComponentItem> =
+        createItem("quantum_smd_inductor", ComponentItem::create)
+            .lang("Quantum SMD Inductor")
+            .register()
+    @Suppress("UNUSED")
+    val WETWARE_SMD_RESISTOR: ItemEntry<ComponentItem> =
+        createItem("wetware_smd_resistor", ComponentItem::create)
+            .lang("Wetware SMD Resistor")
+            .register()
+    @Suppress("UNUSED")
+    val WETWAIRE_SMD_DIODE: ItemEntry<ComponentItem> =
+        createItem("wetware_smd_diode", ComponentItem::create)
+            .lang("Wetware SMD Diode")
+            .register()
+    @Suppress("UNUSED")
+    val WETWARE_SMD_TRANSISTOR: ItemEntry<ComponentItem> =
+        createItem("wetware_smd_transistor", ComponentItem::create)
+            .lang("Wetware SMD Transistor")
+            .register()
+    @Suppress("UNUSED")
+    val WETWARE_SMD_CAPACITOR: ItemEntry<ComponentItem> =
+        createItem("wetware_smd_capacitor", ComponentItem::create)
+            .lang("Wetware SMD Capacitor")
+            .register()
+    @Suppress("UNUSED")
+    val WETWARE_SMD_INDUCTOR: ItemEntry<ComponentItem> =
+        createItem("wetware_smd_inductor", ComponentItem::create)
+            .lang("Wetware SMD Inductor")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_SMD_RESISTOR: ItemEntry<ComponentItem> =
+        createItem("supracausal_smd_resistor", ComponentItem::create)
+            .lang("Supracausal SMD Resistor")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_SMD_DIODE: ItemEntry<ComponentItem> =
+        createItem("supracausal_smd_diode", ComponentItem::create)
+            .lang("Supracausal SMD Diode")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_SMD_TRANSISTOR: ItemEntry<ComponentItem> =
+        createItem("supracausal_smd_transistor", ComponentItem::create)
+            .lang("Supracausal SMD Transistor")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_SMD_CAPACITOR: ItemEntry<ComponentItem> =
+        createItem("supracausal_smd_capacitor", ComponentItem::create)
+            .lang("Supracausal SMD Capacitor")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_SMD_INDUCTOR: ItemEntry<ComponentItem> =
+        createItem("supracausal_smd_inductor", ComponentItem::create)
+            .lang("Supracausal SMD Inductor")
+            .register()
+    @Suppress("UNUSED")
+    val SUPRACAUSAL_CIRCUIT_BOARD: ItemEntry<ComponentItem> =
+        createItem("supracausal_circuit_board", ComponentItem::create)
+            .lang("Supracausal Circuit Board")
+            .register()
+    @Suppress("UNUSED")
+
+
 
     private fun <T : Item> createItem(
         name: String,
