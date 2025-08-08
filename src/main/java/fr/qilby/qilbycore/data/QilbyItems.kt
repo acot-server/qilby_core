@@ -2,6 +2,7 @@ package fr.qilby.qilbycore.data
 import com.gregtechceu.gtceu.api.GTValues
 import com.gregtechceu.gtceu.api.item.ComponentItem
 import com.gregtechceu.gtceu.api.item.component.ElectricStats
+import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate
 import com.tterrag.registrate.Registrate
 import com.tterrag.registrate.builders.ItemBuilder
 import com.tterrag.registrate.util.entry.ItemEntry
@@ -508,7 +509,7 @@ object QilbyItems {
     private fun <T : Item> createItem(
         name: String,
         factory : NonNullFunction<Item.Properties, T>
-    ) : ItemBuilder<T, Registrate> {
+    ) : ItemBuilder<T, GTRegistrate> {
         return REGISTRATE.item(name, factory)
     }
 

@@ -6,18 +6,16 @@ import com.gregtechceu.gtceu.api.capability.recipe.IO
 import com.gregtechceu.gtceu.api.data.RotationState
 import com.gregtechceu.gtceu.api.machine.MachineDefinition
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility
+import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder
-import com.gregtechceu.gtceu.client.renderer.machine.DiodeRenderer
-import com.gregtechceu.gtceu.client.renderer.machine.HPCAPartRenderer
 import com.gregtechceu.gtceu.common.data.GTMaterials
-import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils
-import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.registerLaserHatch
 import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils.registerTieredMachines
 import com.gregtechceu.gtceu.common.data.machines.GTResearchMachines.OVERHEAT_TOOLTIPS
+import com.gregtechceu.gtceu.common.data.models.GTMachineModels
+import com.gregtechceu.gtceu.common.data.models.GTMachineModels.createHPCAPartModel
 import com.gregtechceu.gtceu.common.machine.multiblock.part.DiodePartMachine
 import com.gregtechceu.gtceu.common.machine.multiblock.part.EnergyHatchPartMachine
 import com.gregtechceu.gtceu.common.machine.multiblock.part.LaserHatchPartMachine
-import com.gregtechceu.gtceu.integration.kjs.recipe.components.GTRecipeComponents.OUT
 import com.gregtechceu.gtceu.utils.FormattingUtil
 import fr.qilby.qilbycore.QilbyRegistries.REGISTRATE
 import fr.qilby.qilbycore.multiblock.part.HPCAGenericComputationPartMachine
@@ -26,7 +24,7 @@ import net.minecraft.network.chat.Component
 
 
 object QilbyMachines {
-
+/*
     val HPCA_COMP_HV: MachineDefinition = mkHPCAComputationPart(
         "hpca_processor_mk1",
         GTValues.VA[GTValues.MV],
@@ -101,16 +99,19 @@ object QilbyMachines {
         cooling: Int
     ): MachineBuilder<MachineDefinition> {
         return REGISTRATE.machine(name) { HPCAGenericComputationPartMachine(it, eut, cwut, cooling, true) }
-            .langValue(name).rotationState(RotationState.ALL).abilities(PartAbility.HPCA_COMPONENT).renderer {
-                HPCAPartRenderer(
-                    true, GTCEu.id("block/overlay/machine/hpca/advanced_computation"), null, null, null, null, null
-                )
-            }.tooltips(
+            .langValue(name).rotationState(RotationState.ALL).abilities(PartAbility.HPCA_COMPONENT)
+            .tooltips(
                 Component.translatable("gtceu.machine.hpca.component_general.upkeep_eut", eut),
                 Component.translatable("gtceu.machine.hpca.component_general.max_eut", eut),
                 Component.translatable("gtceu.machine.hpca.component_type.computation_cwut", cwut),
                 Component.translatable("gtceu.machine.hpca.component_type.computation_cooling", cooling)
-            ).tooltipBuilder(OVERHEAT_TOOLTIPS)
+            )
+            .tooltipBuilder(OVERHEAT_TOOLTIPS)
+            .modelProperty(GTMachineModelProperties.IS_HPCA_PART_DAMAGED, false)
+            .modelProperty(GTMachineModelProperties.IS_ACTIVE, false)
+            .model(createHPCAPartModel( true,
+                GTCEu.id("block/overy/machine/hpca/advanced_computation"),
+                GTCEu.id("block/overlay/machine/hpca/damaged/advanced_computation")))
     }
 
 
@@ -214,7 +215,7 @@ object QilbyMachines {
     ).register()
 
     val ENERGY_INPUT_HATCH_4A_LOW_TIER =
-        GTMachineUtils.registerTieredMachines(
+        registerTieredMachines(
             "energy_input_hatch_4a",
             {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.IN, 4)},
             {tier, builder ->
@@ -229,12 +230,12 @@ object QilbyMachines {
                         Component.translatable("gtceu.universal.tooltip.energy_storage_capacity",
                             FormattingUtil.formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 4))),
                         Component.translatable("gtceu.machine.energy_hatch.input_hi_amp.tooltip"))
-                    .overlayTieredHullRenderer("energy_hatch.input_4a")
+                    .overlayTieredHullModel("energy_hatch_input_4a")
                     .register()
             },
             *GTValues.tiersBetween(GTValues.LV, GTValues.HV))
 
-    val SUBSTATION_INPUT_HATCH_256 = GTMachineUtils.registerTieredMachines("substation_input_hatch_256a",
+    val SUBSTATION_INPUT_HATCH_256 = registerTieredMachines("substation_input_hatch_256a",
         {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.IN, 256)},
         {tier, builder -> builder
             .langValue(GTValues.VNF[tier] + " 256A Substation Energy Hatch")
@@ -248,11 +249,11 @@ object QilbyMachines {
                         .formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 256))),
                 Component.translatable("gtceu.machine.substation_hatch.input.tooltip")
             )
-            .overlayTieredHullRenderer("energy_hatch.input_64a")
+            .overlayTieredHullModel("energy_hatch_input_64a")
             .register()},
         GTValues.OpV, GTValues.MAX)
 
-    val SUBSTATION_OUTPUT_HATCH_256 = GTMachineUtils.registerTieredMachines("substation_output_hatch_256a",
+    val SUBSTATION_OUTPUT_HATCH_256 = registerTieredMachines("substation_output_hatch_256a",
         {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.OUT, 256)},
         {tier, builder -> builder
             .langValue(GTValues.VNF[tier] + " 256A Substation Dynamo Hatch")
@@ -266,11 +267,11 @@ object QilbyMachines {
                         .formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 256))),
                 Component.translatable("gtceu.machine.substation_hatch.output.tooltip")
             )
-            .overlayTieredHullRenderer("energy_hatch.output_64a")
+            .overlayTieredHullModel("energy_hatch_output_64a")
             .register()},
         GTValues.OpV, GTValues.MAX)
 
-    val SUBSTATION_INPUT_HATCH_1024 = GTMachineUtils.registerTieredMachines("substation_input_hatch_1024a",
+    val SUBSTATION_INPUT_HATCH_1024 = registerTieredMachines("substation_input_hatch_1024a",
         {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.IN, 1024)},
         {tier, builder -> builder
             .langValue(GTValues.VNF[tier] + " 1024A Substation Energy Hatch")
@@ -284,11 +285,11 @@ object QilbyMachines {
                         .formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 1024))),
                 Component.translatable("gtceu.machine.substation_hatch.input.tooltip")
             )
-            .overlayTieredHullRenderer("energy_hatch.input_64a")
+            .overlayTieredHullModel("energy_hatch_input_64a")
             .register()},
         GTValues.OpV, GTValues.MAX)
 
-    val SUBSTATION_OUTPUT_HATCH_1024 = GTMachineUtils.registerTieredMachines("substation_output_hatch_1024a",
+    val SUBSTATION_OUTPUT_HATCH_1024 = registerTieredMachines("substation_output_hatch_1024a",
         {holder, tier -> EnergyHatchPartMachine(holder, tier, IO.OUT, 1024)},
         {tier, builder -> builder
             .langValue(GTValues.VNF[tier] + " 1024A Substation Dynamo Hatch")
@@ -302,7 +303,7 @@ object QilbyMachines {
                         .formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, 1024))),
                 Component.translatable("gtceu.machine.substation_hatch.output.tooltip")
             )
-            .overlayTieredHullRenderer("energy_hatch.output_64a")
+            .overlayTieredHullModel("energy_hatch_output_64a")
             .register()},
         GTValues.OpV, GTValues.MAX)
 
@@ -312,7 +313,7 @@ object QilbyMachines {
                 .langValue(GTValues.VNF[tier] + " Diode")
                 .rotationState(RotationState.ALL)
                 .abilities(PartAbility.PASSTHROUGH_HATCH)
-                .renderer { DiodeRenderer(tier) }
+                .model(GTMachineModels.createDiodeModel())
                 .tooltips(
                     Component.translatable("gtceu.machine.diode.tooltip_general"),
                     Component.translatable("gtceu.machine.diode.tooltip_starts_at"),
@@ -356,15 +357,17 @@ object QilbyMachines {
         coolant: Int
     ) : MachineBuilder<MachineDefinition> {
         var x = REGISTRATE.machine(name) { HPCAGenericCoolingPartMachine(it, upkeep, cooling, coolant) }
-            .langValue(name).rotationState(RotationState.ALL).abilities(PartAbility.HPCA_COMPONENT).renderer {
-                if (coolant == 0)
-                    HPCAPartRenderer(false,  GTCEu.id("block/overlay/machine/hpca/heat_sink"), null, null, null, null, null)
-                else
-                    HPCAPartRenderer(true, GTCEu.id("block/overlay/machine/hpca/active_cooler"), null, null, null, null, null)
-            }
+            .langValue(name)
+            .rotationState(RotationState.ALL)
+            .abilities(PartAbility.HPCA_COMPONENT)
+            .modelProperty(GTMachineModelProperties.IS_HPCA_PART_DAMAGED, false)
+            .modelProperty(GTMachineModelProperties.IS_ACTIVE, false)
+            .model(createHPCAPartModel(true,
+                GTCEu.id("block/overlay/hpca/" + (if (coolant == 0) "heat_sink" else "active_cooler"))
+                ,GTCEu.id("block/overlay/hpca/damaged/" + (if (coolant == 0) "heat_sink" else "active_cooler"))))
             .tooltips(
                 Component.translatable("gtceu.machine.hpca.component_general.max_eut", upkeep),
-                Component.translatable(if (coolant == 0) "gtceu.machine.hpca.component_type.cooler_passive" else "gtceu.machine.hpca.component_type.cooler_active"),
+                Component.translatable("gtceu.machine.hpca.component_type.cooler_" + if (coolant == 0) "passive" else "active"),
                 Component.translatable("gtceu.machine.hpca.component_type.cooler_cooling", cooling))
         if (coolant != 0) {
             x = x.tooltips(Component.translatable(
@@ -404,14 +407,14 @@ object QilbyMachines {
                         Component.translatable("gtceu.universal.disabled")
                     )
                     .abilities(ability)
-                    .overlayTieredHullRenderer("laser_hatch.$name")
+                    .overlayTieredHullModel("laser_hatch_$name")
                     .register()
             },
             GTValues.MAX
         )
     }
-
+*/
     fun init() {
-        REGISTRATE.creativeModeTab { QilbyCreativeModTabs.MAIN_TAB }
+//        REGISTRATE.creativeModeTab { QilbyCreativeModTabs.MAIN_TAB }
     }
 }

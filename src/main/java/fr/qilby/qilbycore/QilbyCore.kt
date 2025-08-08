@@ -16,7 +16,7 @@ object QilbyCore {
         CommonProxy.init()
     }
     fun id(path: String): ResourceLocation {
-        return ResourceLocation(MOD_ID, FormattingUtil.toLowerCaseUnder(path))
+        return ResourceLocation(MOD_ID, path)
     }
 
     @JvmStatic
