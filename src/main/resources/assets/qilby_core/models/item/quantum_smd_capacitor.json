@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:item/generated",
-    "textures": {
-      "layer0": "qilby_core:item/quantum_smd_capacitor"
-    }
-  }
