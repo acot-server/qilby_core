@@ -2,6 +2,7 @@ package fr.qilby.qilby_core;
 
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import fr.qilby.qilby_core.common.data.QilbyElements;
 import fr.qilby.qilby_core.common.registry.QilbyRegistration;
 
 @com.gregtechceu.gtceu.api.addon.GTAddon
@@ -16,4 +17,7 @@ public class QilbyGTAddon implements IGTAddon {
     public String addonModId() {
         return QilbyCore.MOD_ID;
     }
+
+    @Override
+    public void registerElements() {QilbyElements.init();}
 }
