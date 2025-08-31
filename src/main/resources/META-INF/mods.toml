@@ -1,0 +1,42 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+issueTrackerURL = "https://github.com/acon-server/qilby_core/issues"
+license = "MIT"
+
+[[mods]]
+modId = "qilby_core"
+version = "2.0.0"
+displayName = "Qilby Core"
+authors = "Annwan, LunaFreyja"
+description = "Dedicated addon for the Greg's Factory II modpack"
+logoFile = "icon.png"
+displayURL = "https://github.com/acon-server/qilby_core"
+
+[[dependencies.qilby_core]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.qilby_core]]
+modId = "minecraft"
+mandatory = true
+versionRange = "1.20.1"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.qilby_core]]
+modId = "gtceu"
+mandatory = true
+versionRange = "[7.1.3,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.qilby_core]]
+modId = "gtnn"
+versionRange = "[1.3.2,)"
+mandatory = true
+ordering = "AFTER"
+side = "BOTH"
+
