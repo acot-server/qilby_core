@@ -5,7 +5,6 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry;
 import fr.qilby.qilby_core.common.data.QilbyMaterials;
-import fr.qilby.qilby_core.common.registry.QilbyRegistration;
 import fr.qilby.qilby_core.data.QilbyDataGen;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
