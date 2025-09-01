@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry;
+import fr.qilby.qilby_core.common.data.QilbyItems;
 import fr.qilby.qilby_core.common.data.QilbyMaterials;
 import fr.qilby.qilby_core.common.registry.QilbyRegistration;
 import fr.qilby.qilby_core.data.QilbyDataGen;
@@ -27,6 +28,7 @@ public class QilbyCore  {
         bus.register(this);
     }
     public static void init() {
+        QilbyItems.init();
         QilbyDataGen.init();
         QilbyRegistration.REGISTRATE.registerRegistrate();
     }
