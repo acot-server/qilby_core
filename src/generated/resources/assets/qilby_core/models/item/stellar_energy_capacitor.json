@@ -1,0 +1,56 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "qilby_core:item/stellar_energy_capacitor/0",
+      "predicate": {
+        "qilby_core:battery": 0.0
+      }
+    },
+    {
+      "model": "qilby_core:item/stellar_energy_capacitor/1",
+      "predicate": {
+        "qilby_core:battery": 0.01
+      }
+    },
+    {
+      "model": "qilby_core:item/stellar_energy_capacitor/2",
+      "predicate": {
+        "qilby_core:battery": 0.02
+      }
+    },
+    {
+      "model": "qilby_core:item/stellar_energy_capacitor/3",
+      "predicate": {
+        "qilby_core:battery": 0.03
+      }
+    },
+    {
+      "model": "qilby_core:item/stellar_energy_capacitor/4",
+      "predicate": {
+        "qilby_core:battery": 0.04
+      }
+    },
+    {
+      "model": "qilby_core:item/stellar_energy_capacitor/5",
+      "predicate": {
+        "qilby_core:battery": 0.05
+      }
+    },
+    {
+      "model": "qilby_core:item/stellar_energy_capacitor/6",
+      "predicate": {
+        "qilby_core:battery": 0.06
+      }
+    },
+    {
+      "model": "qilby_core:item/stellar_energy_capacitor/7",
+      "predicate": {
+        "qilby_core:battery": 0.07
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "qilby_core:item/stellar_energy_capacitor/1"
+  }
+}

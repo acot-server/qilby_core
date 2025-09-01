@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "qilby_core:item/dark_matter_small_capacitor/4"
+  }
+}
