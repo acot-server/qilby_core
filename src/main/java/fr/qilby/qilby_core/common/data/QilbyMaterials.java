@@ -128,6 +128,13 @@ public class QilbyMaterials {
                 .cableProperties(GTValues.V[GTValues.MAX], 256, 0, false)
                 .fluidPipeProperties(5_000_000, 500_000,true,true,true,true)
                 .buildAndRegister();
+        TransparentAlumnium = Builder("transparent_aluminium")
+                .fluid()
+                .ingot()
+                .polymer()
+                .flags(GENERATE_PLATE, GENERATE_FOIL)
+                .color(0x85A6AA)
+                .buildAndRegister();
         // Fluids
         SolderingFlux = Builder("soldering_flux")
                 .fluid()
