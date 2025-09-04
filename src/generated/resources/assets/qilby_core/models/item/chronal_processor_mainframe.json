@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "qilby_core:item/chronal_processor_mainframe"
+  }
+}

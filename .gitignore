@@ -5,7 +5,7 @@ bin
 .metadata
 .classpath
 .project
-
+.cache
 # idea
 out
 *.ipr
