@@ -4,6 +4,7 @@ import com.gregtechceu.gtceu.api.item.ComponentItem;
 import com.gregtechceu.gtceu.api.item.IComponentItem;
 import com.gregtechceu.gtceu.api.item.component.IItemComponent;
 import com.gregtechceu.gtceu.common.data.GTItems;
+import com.sun.jna.platform.win32.WinDef;
 import com.tterrag.registrate.util.entry.ItemEntry;
 import com.tterrag.registrate.util.nullness.NonNullConsumer;
 import fr.qilby.qilby_core.QilbyCore;
@@ -104,9 +105,8 @@ public class QilbyItems {
 
     public static ItemEntry<ComponentItem> DOFUS_ENERGY_CAPACITOR = REGISTRATE
             .item("dofus_energy_capacitor", ComponentItem::create)
-            .model(overrideModel(QilbyCore.id("battery"), 8))
             .onRegister(modelPredicate(QilbyCore.id("battery"), ElectricStats::getStoredPredicate))
-            .onRegister(attach(ElectricStats.createRechargeableBattery(9_000_000_000_000_000_000L, GTValues.MAX)))
+            .onRegister(attach(ElectricStats.createRechargeableBattery(9_223_372_036_854_775_807L, GTValues.MAX)))
             .register();
 
     //Circuits and Wafer
