@@ -1,4 +1,9 @@
 {
+  "block.qilby_core.machine_coil_dark_energy": "Machine Coil Dark Energy",
+  "block.qilby_core.machine_coil_dark_matter": "Machine Coil Dark Matter",
+  "block.qilby_core.machine_coil_infinity": "Machine Coil Infinity",
+  "block.qilby_core.machine_coil_runic_stellarite": "Machine Coil Runic Stellarite",
+  "block.qilby_core.machine_coil_stellarite": "Machine Coil Stellarite",
   "item.qilby_core.chronal_processor": "Chronal Processor",
   "item.qilby_core.chronal_processor_assembly": "Chronal Processor Assembly",
   "item.qilby_core.chronal_processor_computer": "Chronal Processor Computer",
