@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "qilby_core:machine_coil_infinity"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "qilby_core:blocks/machine_coil_infinity"
+}

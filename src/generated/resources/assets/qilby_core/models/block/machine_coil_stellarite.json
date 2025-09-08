@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "qilby_core:block/coil/s/machine_stellarite"
+  }
+}

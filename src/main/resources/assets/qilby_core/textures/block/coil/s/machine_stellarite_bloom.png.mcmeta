@@ -1,0 +1,9 @@
+{
+    "ldlib": {
+        "connection": "qilby_core:block/coil/s/machine_stellarite_bloom_ctm",
+        "emissive": true
+    },
+    "shimmer": {
+        "bloom": true
+    }
+}

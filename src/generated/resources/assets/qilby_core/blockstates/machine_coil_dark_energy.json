@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "qilby_core:block/machine_coil_dark_energy"
+    },
+    "active=true": {
+      "model": "qilby_core:block/machine_coil_dark_energy_active"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "ldlib": {
+        "connection": "qilby_core:block/coil/dm/machine_coil_dark_matter_bloom_ctm",
+        "emissive": true
+    },
+    "shimmer": {
+        "bloom": true
+    }
+}

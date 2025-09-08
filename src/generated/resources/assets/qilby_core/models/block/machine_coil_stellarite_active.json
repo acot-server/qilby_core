@@ -1,0 +1,7 @@
+{
+  "parent": "gtceu:block/cube_2_layer/all",
+  "textures": {
+    "bot_all": "qilby_core:block/coil/s/machine_stellarite",
+    "top_all": "qilby_core:block/coil/s/machine_stellarite_bloom"
+  }
+}

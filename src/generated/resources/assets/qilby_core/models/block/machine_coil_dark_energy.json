@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "qilby_core:block/coil/de/machine_coil_dark_energy"
+  }
+}

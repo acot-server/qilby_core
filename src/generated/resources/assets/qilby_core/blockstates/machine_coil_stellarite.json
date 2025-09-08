@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=false": {
+      "model": "qilby_core:block/machine_coil_stellarite"
+    },
+    "active=true": {
+      "model": "qilby_core:block/machine_coil_stellarite_active"
+    }
+  }
+}

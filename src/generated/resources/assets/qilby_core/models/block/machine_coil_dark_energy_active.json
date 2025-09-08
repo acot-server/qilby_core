@@ -1,0 +1,7 @@
+{
+  "parent": "gtceu:block/cube_2_layer/all",
+  "textures": {
+    "bot_all": "qilby_core:block/coil/de/machine_coil_dark_energy",
+    "top_all": "qilby_core:block/coil/de/machine_coil_dark_energy_bloom"
+  }
+}

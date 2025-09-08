@@ -1,0 +1,9 @@
+{
+  "values": [
+    "qilby_core:machine_coil_dark_matter",
+    "qilby_core:machine_coil_dark_energy",
+    "qilby_core:machine_coil_runic_stellarite",
+    "qilby_core:machine_coil_stellarite",
+    "qilby_core:machine_coil_infinity"
+  ]
+}
