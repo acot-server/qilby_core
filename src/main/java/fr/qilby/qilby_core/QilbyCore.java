@@ -4,9 +4,11 @@ import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry;
+import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import fr.qilby.qilby_core.common.block.QilbyBlocks;
 import fr.qilby.qilby_core.common.data.QilbyItems;
 import fr.qilby.qilby_core.common.data.QilbyMaterials;
+import fr.qilby.qilby_core.common.machine.QilbyMachines;
 import fr.qilby.qilby_core.common.registry.QilbyRegistration;
 import fr.qilby.qilby_core.data.QilbyDataGen;
 import net.minecraft.resources.ResourceLocation;
@@ -26,8 +28,12 @@ public class QilbyCore  {
     public QilbyCore() {
         QilbyCore.init();
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
+        bus.addGenericListener(MachineDefinition.class, this::registerMachines);
         bus.register(this);
     }
+
+
+
     public static void init() {
         QilbyRegistration.REGISTRATE.registerRegistrate();
         QilbyItems.init();
@@ -44,6 +50,10 @@ public class QilbyCore  {
     @SubscribeEvent
     public void registerMaterials(MaterialEvent event) {
         QilbyMaterials.init();
+    }
+
+    private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
+        QilbyMachines.init();
     }
 
     public static ResourceLocation id(String path) {
