@@ -33,27 +33,30 @@ public class QilbyCoilBlock extends ActiveBlock {
         THETA_COIL(
                 "infinity",50000,32,16,9, QilbyMaterials.FabricOfReality, QilbyCore.id("block/coil/t/machine_theta")
         );
-
         @NonNull
-        @Getter
         private final String name;
+        @NonNull
+        @Override
+        public String getName() {return name;}
         // electric blast furnace properties
-        @Getter
         private final int coilTemperature;
+        @Override
+        public int getCoilTemperature() {return coilTemperature;}
 
         // multi smelter properties
-        @Getter
         private final int level;
-        @Getter
+        public int getLevel() {return level;}
         private final int energyDiscount;
-        @Getter
+        public final int getEnergyDiscount() {return energyDiscount;}
         private final int tier;
-        @Getter
+        public int getTier() {return tier;}
         @NonNull
         private final Material material;
         @NonNull
-        @Getter
+        public Material getMaterial() {return material;};
         private final ResourceLocation texture;
+        public ResourceLocation getTexture() {return texture;}
+
         CoilType(String name, int coilTemperature, int level, int energyDiscount, int tier, Material material,
         ResourceLocation texture) {
             this.name = name;

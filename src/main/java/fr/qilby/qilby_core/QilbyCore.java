@@ -29,10 +29,11 @@ public class QilbyCore  {
         bus.register(this);
     }
     public static void init() {
+        QilbyRegistration.REGISTRATE.registerRegistrate();
         QilbyItems.init();
         QilbyBlocks.init();
         QilbyDataGen.init();
-        QilbyRegistration.REGISTRATE.registerRegistrate();
+
     }
 
     @SubscribeEvent

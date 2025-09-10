@@ -79,7 +79,7 @@ public class QilbyMaterials {
                 .ingot()
                 .fluid()
                 .color(0x204020).iconSet(DULL)
-                .blastTemp(8000, BlastProperty.GasTier.HIGHEST,GTValues.VHA[GTValues.UHV],200)
+                .blastTemp(12_000, BlastProperty.GasTier.HIGHEST,GTValues.VHA[GTValues.UHV],200)
                 .cableProperties(GTValues.V[GTValues.UEV], 4, 32, false)
                 .element(QilbyElements.DMatter)
                 .buildAndRegister();
