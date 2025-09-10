@@ -79,7 +79,7 @@ public class QilbyMaterials {
                 .ingot()
                 .fluid()
                 .color(0x204020).iconSet(DULL)
-                .blastTemp(10_500, BlastProperty.GasTier.HIGHEST,GTValues.VHA[GTValues.UHV],200)
+                .blastTemp(8000, BlastProperty.GasTier.HIGHEST,GTValues.VHA[GTValues.UHV],200)
                 .cableProperties(GTValues.V[GTValues.UEV], 4, 32, false)
                 .element(QilbyElements.DMatter)
                 .buildAndRegister();
@@ -90,7 +90,7 @@ public class QilbyMaterials {
                 .ingot()
                 .fluid()
                 .color(0x202040).iconSet(DULL)
-                .blastTemp(12_000, BlastProperty.GasTier.HIGHEST, GTValues.VHA[GTValues.UEV],200)
+                .blastTemp(8500, BlastProperty.GasTier.HIGHEST, GTValues.VHA[GTValues.UEV],200)
                 .rotorStats(500, 400, 20f, 1000000)
                 .cableProperties(GTValues.V[GTValues.UIV], 4, 64, false)
                 .element(QilbyElements.DEnergy)
@@ -102,7 +102,7 @@ public class QilbyMaterials {
                 .ingot()
                 .fluid()
                 .color(0xD11A1A).iconSet(SHINY)
-                .blastTemp(25_000, BlastProperty.GasTier.HIGHEST, GTValues.VHA[GTValues.UIV],200)
+                .blastTemp(9000, BlastProperty.GasTier.HIGHEST, GTValues.VHA[GTValues.UIV],200)
                 .rotorStats(500, 450, 20f, 1500000)
                 .cableProperties(GTValues.V[GTValues.UXV], 4, 128, false)
                 .buildAndRegister();
@@ -113,7 +113,7 @@ public class QilbyMaterials {
                 .ingot()
                 .fluid()
                 .color(0xC79024).iconSet(SHINY)
-                .blastTemp(48_000, BlastProperty.GasTier.HIGHEST, GTValues.VHA[GTValues.UXV],200)
+                .blastTemp(9500, BlastProperty.GasTier.HIGHEST, GTValues.VHA[GTValues.UXV],200)
                 .cableProperties(GTValues.V[GTValues.OpV], 4, 256, false)
                 .buildAndRegister();
 
@@ -123,7 +123,7 @@ public class QilbyMaterials {
                 .ingot()
                 .fluid()
                 .color(0xCF2CAB).iconSet(SHINY)
-                .blastTemp(80_000, BlastProperty.GasTier.HIGHEST, GTValues.VHA[GTValues.OpV],200)
+                .blastTemp(10000, BlastProperty.GasTier.HIGHEST, GTValues.VHA[GTValues.OpV],200)
                 .rotorStats(500, 500, 25f, 2000000)
                 .cableProperties(GTValues.V[GTValues.MAX], 256, 0, false)
                 .fluidPipeProperties(5_000_000, 500_000,true,true,true,true)

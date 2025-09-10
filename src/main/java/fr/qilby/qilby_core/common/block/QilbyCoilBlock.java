@@ -10,6 +10,7 @@ import lombok.NonNull;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.StringRepresentable;
 
+
 public class QilbyCoilBlock extends ActiveBlock {
     public ICoilType coilType;
     public QilbyCoilBlock(Properties properties,ICoilType coilType) {
@@ -21,16 +22,16 @@ public class QilbyCoilBlock extends ActiveBlock {
                 "dark_matter",12500,8,8,5, QilbyMaterials.DarkMatter, QilbyCore.id("block/coil/dm/machine_coil_dark_matter")
         ),
         DARK_ENERGY_COIL(
-                "dark_energy",25000,12,8,6, QilbyMaterials.DarkEnergy, QilbyCore.id("block/coil/de/machine_coil_dark_energy")
+                "dark_energy",18000,12,8,6, QilbyMaterials.DarkEnergy, QilbyCore.id("block/coil/de/machine_coil_dark_energy")
         ),
         RUNIC_STELLARITE_COIL(
-                "runic_stellarite",50000,12,8,7, QilbyMaterials.RunicStellarite, QilbyCore.id("block/coil/rs/machine_runic")
+                "runic_stellarite",22500,12,8,7, QilbyMaterials.RunicStellarite, QilbyCore.id("block/coil/rs/machine_runic")
         ),
         STELLARITE_COIL(
-                "stellarite",80000,16,12,8, QilbyMaterials.RunicStellarite, QilbyCore.id("block/coil/s/machine_stellarite")
+                "stellarite",30000,16,12,8, QilbyMaterials.Stellarite, QilbyCore.id("block/coil/s/machine_stellarite")
         ),
         THETA_COIL(
-                "infinity",1000000,32,16,9, QilbyMaterials.RunicStellarite, QilbyCore.id("block/coil/t/machine_theta")
+                "infinity",50000,32,16,9, QilbyMaterials.FabricOfReality, QilbyCore.id("block/coil/t/machine_theta")
         );
 
         @NonNull
