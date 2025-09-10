@@ -5,10 +5,9 @@ import com.gregtechceu.gtceu.api.block.ICoilType;
 import com.gregtechceu.gtceu.api.data.chemical.material.Material;
 import fr.qilby.qilby_core.QilbyCore;
 import fr.qilby.qilby_core.common.data.QilbyMaterials;
-import lombok.Getter;
-import lombok.NonNull;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.StringRepresentable;
+import org.jetbrains.annotations.NotNull;
 
 
 public class QilbyCoilBlock extends ActiveBlock {
@@ -33,11 +32,10 @@ public class QilbyCoilBlock extends ActiveBlock {
         THETA_COIL(
                 "infinity",50000,32,16,9, QilbyMaterials.FabricOfReality, QilbyCore.id("block/coil/t/machine_theta")
         );
-        @NonNull
+        @NotNull
         private final String name;
-        @NonNull
         @Override
-        public String getName() {return name;}
+        public @NotNull String getName() {return name;}
         // electric blast furnace properties
         private final int coilTemperature;
         @Override
@@ -50,15 +48,15 @@ public class QilbyCoilBlock extends ActiveBlock {
         public final int getEnergyDiscount() {return energyDiscount;}
         private final int tier;
         public int getTier() {return tier;}
-        @NonNull
+        @NotNull
         private final Material material;
-        @NonNull
-        public Material getMaterial() {return material;};
+        @NotNull
+        public Material getMaterial() {return material;}
         private final ResourceLocation texture;
         public ResourceLocation getTexture() {return texture;}
 
-        CoilType(String name, int coilTemperature, int level, int energyDiscount, int tier, Material material,
-        ResourceLocation texture) {
+        CoilType(@NotNull String name, int coilTemperature, int level, int energyDiscount, int tier, @NotNull Material material,
+                 ResourceLocation texture) {
             this.name = name;
             this.coilTemperature = coilTemperature;
             this.level = level;
@@ -67,14 +65,13 @@ public class QilbyCoilBlock extends ActiveBlock {
             this.material = material;
             this.texture = texture;
         }
-        @NonNull
+        @NotNull
         @Override
         public String toString() {
             return getName();
         }
-        @NonNull
         @Override
-        public String getSerializedName() {
+        public @NotNull String getSerializedName() {
             return name;
         }
     }
