@@ -1,4 +1,5 @@
 {
+  "block.qilby_core.hpca_cooler_air_iv": "IV HPCA Heat Sink",
   "block.qilby_core.hpca_processor_mk1": "HPCA Processor MK.I",
   "block.qilby_core.hpca_processor_mk10": "HPCA Processor MK.X",
   "block.qilby_core.hpca_processor_mk11": "HPCA Processor MK.XI",

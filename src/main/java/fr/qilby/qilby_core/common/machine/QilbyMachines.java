@@ -7,13 +7,16 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties;
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
+import com.gregtechceu.gtceu.common.data.GTMaterials;
 import fr.qilby.qilby_core.common.machine.multiblock.electric.research.GenericComputeComponent;
+import fr.qilby.qilby_core.common.machine.multiblock.electric.research.GenericCoolingComponent;
 import net.minecraft.network.chat.Component;
 
 import static com.gregtechceu.gtceu.common.data.machines.GTResearchMachines.OVERHEAT_TOOLTIPS;
 import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.createHPCAPartModel;
 import static fr.qilby.qilby_core.common.registry.QilbyRegistration.REGISTRATE;
 
+@SuppressWarnings("all")
 public class QilbyMachines {
 
     public static MachineDefinition HPCA_COMP_HV = createHPCACompute(
@@ -148,6 +151,40 @@ public class QilbyMachines {
                 ));
     }
 
-    public static void init() {
+    public static MachineDefinition HPCA_COOLER_AIR_IV = createHPCACooler(
+            "hpca_cooler_air_iv",
+            "IV HPCA Heat Sink",
+            GTValues.VA[GTValues.LV],
+            GTValues.VA[GTValues.HV],
+            5,
+            0
+    ).register();
+
+    // Mets maxCoolantPerTick à autre chose que 0 pour un refroidisseur actif.
+
+    static private MachineBuilder<MachineDefinition> createHPCACooler(String id, String name, int upkeepEUt, int maxEUt, int coolingAmount, int maxCoolantPerTick) {
+        var x = REGISTRATE.machine(id, h -> new GenericCoolingComponent(h, upkeepEUt, maxEUt, coolingAmount, maxCoolantPerTick))
+                .langValue(name)
+                .rotationState(RotationState.ALL)
+                .abilities(PartAbility.HPCA_COMPONENT)
+                .modelProperty(GTMachineModelProperties.IS_HPCA_PART_DAMAGED, false)
+                .modelProperty(GTMachineModelProperties.IS_ACTIVE, false)
+                .tooltips(
+                        Component.translatable("gtceu.machine.hpca.component_general.upkeep_eut", upkeepEUt),
+                        Component.translatable("gtceu.machine.hpca.component_general.max_eut", maxEUt),
+                        Component.translatable("gtceu.machine.hpca.component_type.cooler_cooling", coolingAmount)
+                );
+        if (maxCoolantPerTick == 0) {
+            x = x.model(createHPCAPartModel(true,
+                    GTCEu.id("block/overlay/machine/hpca/heat_sink"),
+                    GTCEu.id("block/overlay/machine/hpca/damaged_advanced")));
+        } else {
+            x = x.model(createHPCAPartModel(true,
+                            GTCEu.id("block/overlay/machine/hpca/active_cooler"),
+                            GTCEu.id("block/overlay/machine/hpca/damaged_advanced")))
+                    .tooltips(Component.translatable("gtceu.machine.hpca.component_type.cooler_active_coolant", maxCoolantPerTick, GTMaterials.PCBCoolant.getLocalizedName()));
+        }
+        return x;
     }
+    public static void init() {}
 }
