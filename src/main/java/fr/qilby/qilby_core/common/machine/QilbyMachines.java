@@ -25,6 +25,105 @@ public class QilbyMachines {
             2
     ).register();
 
+    public static MachineDefinition HPCA_COMP_EV = createHPCACompute(
+            "hpca_processor_mk2",
+            "HPCA Processor MK.II",
+            GTValues.VA[GTValues.LV],
+            GTValues.VA[GTValues.HV],
+            2,
+            2
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_IV = createHPCACompute(
+            "hpca_processor_mk3",
+            "HPCA Processor MK.III",
+            GTValues.VA[GTValues.MV],
+            GTValues.VA[GTValues.EV],
+            4,
+            6
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_LuV = createHPCACompute(
+            "hpca_processor_mk4",
+            "HPCA Processor MK.IV",
+            GTValues.VA[GTValues.HV],
+            GTValues.VA[GTValues.IV],
+            6,
+            6
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_ZPM = createHPCACompute(
+            "hpca_processor_mk5",
+            "HPCA Processor MK.V",
+            GTValues.VA[GTValues.EV],
+            GTValues.VA[GTValues.LuV],
+            15,
+            8
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_UV = createHPCACompute(
+            "hpca_processor_mk6",
+            "HPCA Processor MK.VI",
+            GTValues.VA[GTValues.IV],
+            GTValues.VA[GTValues.ZPM],
+            45,
+            15
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_UHV = createHPCACompute(
+            "hpca_processor_mk7",
+            "HPCA Processor MK.VII",
+            GTValues.VA[GTValues.LuV],
+            GTValues.VA[GTValues.UV],
+            200,
+            50
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_UEV = createHPCACompute(
+            "hpca_processor_mk8",
+            "HPCA Processor MK.VIII",
+            GTValues.VA[GTValues.ZPM],
+            GTValues.VA[GTValues.UHV],
+            900,
+            180
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_UIV = createHPCACompute(
+            "hpca_processor_mk9",
+            "HPCA Processor MK.IX",
+            GTValues.VA[GTValues.UV],
+            GTValues.VA[GTValues.UEV],
+            4000,
+            550
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_UXV = createHPCACompute(
+            "hpca_processor_mk10",
+            "HPCA Processor MK.X",
+            GTValues.VA[GTValues.UHV],
+            GTValues.VA[GTValues.UIV],
+            18000,
+            2000
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_OpV = createHPCACompute(
+            "hpca_processor_mk11",
+            "HPCA Processor MK.XI",
+            GTValues.VA[GTValues.UEV],
+            GTValues.VA[GTValues.UXV],
+            100000,
+            10000
+    ).register();
+
+    public static MachineDefinition HPCA_COMP_MAX = createHPCACompute(
+            "hpca_processor_mk12",
+            "HPCA Processor MK.XII",
+            GTValues.VA[GTValues.UV],
+            GTValues.VA[GTValues.MAX],
+            500000,
+            50000
+    ).register();
+
 
     static private MachineBuilder<MachineDefinition> createHPCACompute(String id, String name, int upkeepEUt, int maxEUt, int CWUPerTick, int coolingPerTick) {
         return REGISTRATE.machine(id,

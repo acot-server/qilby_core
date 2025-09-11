@@ -20,19 +20,19 @@ public class QilbyCoilBlock extends ActiveBlock {
     }
     public enum CoilType implements StringRepresentable, ICoilType{
         DARK_MATTER_COIL(
-                "dark_matter",12500,8,8,5, "qilby_core:dark_matter", QilbyCore.id("block/coil/dm/machine_coil_dark_matter")
+                "dark_matter",12_500,8,8,5, "qilby_core:dark_matter", QilbyCore.id("block/coil/dm/machine_coil_dark_matter")
         ),
         DARK_ENERGY_COIL(
-                "dark_energy",18000,12,8,6, "qilby_core:dark_energy", QilbyCore.id("block/coil/de/machine_coil_dark_energy")
+                "dark_energy",18_000,12,8,6, "qilby_core:dark_energy", QilbyCore.id("block/coil/de/machine_coil_dark_energy")
         ),
         RUNIC_STELLARITE_COIL(
-                "runic_stellarite",22500,12,8,7, "qilby_core:runic_stellarite", QilbyCore.id("block/coil/rs/machine_runic")
+                "runic_stellarite",22_500,12,8,7, "qilby_core:runic_stellarite", QilbyCore.id("block/coil/rs/machine_runic")
         ),
         STELLARITE_COIL(
-                "stellarite",30000,16,12,8, "qilby_core:stellarite", QilbyCore.id("block/coil/s/machine_stellarite")
+                "stellarite",30_000,16,12,8, "qilby_core:stellarite", QilbyCore.id("block/coil/s/machine_stellarite")
         ),
         THETA_COIL(
-                "infinity",50000,32,16,9, "qilby_core:fabric_of_reality", QilbyCore.id("block/coil/t/machine_theta")
+                "infinity",100_000,32,16,9, "qilby_core:fabric_of_reality", QilbyCore.id("block/coil/t/machine_theta")
         );
         @NotNull
         private final String name;
