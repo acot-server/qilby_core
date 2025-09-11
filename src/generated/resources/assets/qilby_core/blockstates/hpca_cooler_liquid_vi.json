@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "qilby_core:block/machine/hpca_cooler_liquid_vi",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "qilby_core:block/machine/hpca_cooler_liquid_vi",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "qilby_core:block/machine/hpca_cooler_liquid_vi"
+    },
+    "facing=south": {
+      "model": "qilby_core:block/machine/hpca_cooler_liquid_vi",
+      "y": 180
+    },
+    "facing=up": {
+      "gtceu:z": 180,
+      "model": "qilby_core:block/machine/hpca_cooler_liquid_vi",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "qilby_core:block/machine/hpca_cooler_liquid_vi",
+      "y": 270
+    }
+  }
+}

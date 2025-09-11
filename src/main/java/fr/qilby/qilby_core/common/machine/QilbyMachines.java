@@ -124,7 +124,7 @@ public class QilbyMachines {
             GTValues.VA[GTValues.UV],
             GTValues.VA[GTValues.MAX],
             500000,
-            50000
+            20000
     ).register();
 
 
@@ -150,14 +150,142 @@ public class QilbyMachines {
                         GTCEu.id("block/overlay/machine/hpca/damaged_advanced")
                 ));
     }
+//Air Cooler
+    public static MachineDefinition HPCA_COOLER_AIR_I = createHPCACooler(
+            "hpca_cooler_air_i",
+            "HPCA Heat Sink I",
+            GTValues.VA[GTValues.ULV],
+            GTValues.VA[GTValues.MV],
+            1,
+            0
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_AIR_II = createHPCACooler(
+            "hpca_cooler_air_ii",
+            "HPCA Heat Sink II",
+            GTValues.VA[GTValues.LV],
+            GTValues.VA[GTValues.HV],
+            3,
+            0
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_AIR_III = createHPCACooler(
+            "hpca_cooler_air_iii",
+            "HPCA Heat Sink III",
+            GTValues.VA[GTValues.MV],
+            GTValues.VA[GTValues.EV],
+            10,
+            0
+    ).register();
 
     public static MachineDefinition HPCA_COOLER_AIR_IV = createHPCACooler(
             "hpca_cooler_air_iv",
-            "IV HPCA Heat Sink",
+            "HPCA Heat Sink IV",
+            GTValues.VA[GTValues.HV],
+            GTValues.VA[GTValues.IV],
+            25,
+            0
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_AIR_V = createHPCACooler(
+            "hpca_cooler_air_v",
+            "HPCA Heat Sink V",
+            GTValues.VA[GTValues.EV],
+            GTValues.VA[GTValues.LuV],
+            50,
+            0
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_AIR_VI = createHPCACooler(
+            "hpca_cooler_air_vi",
+            "HPCA Heat Sink VI",
+            GTValues.VA[GTValues.IV],
+            GTValues.VA[GTValues.ZPM],
+            80,
+            0
+    ).register();
+
+    //Liquid Cooler
+
+    public static MachineDefinition HPCA_COOLER_LIQUID_I = createHPCACooler(
+            "hpca_cooler_liquid_i",
+            "HPCA Liquid Cooler I",
             GTValues.VA[GTValues.LV],
             GTValues.VA[GTValues.HV],
-            5,
-            0
+            3,
+            1
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_LIQUID_II = createHPCACooler(
+            "hpca_cooler_liquid_ii",
+            "HPCA Liquid Cooler II",
+            GTValues.VA[GTValues.MV],
+            GTValues.VA[GTValues.EV],
+            10,
+            2
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_LIQUID_III = createHPCACooler(
+            "hpca_cooler_liquid_iii",
+            "HPCA Liquid Cooler III",
+            GTValues.VA[GTValues.EV],
+            GTValues.VA[GTValues.LuV],
+            45,
+            4
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_LIQUID_IV = createHPCACooler(
+            "hpca_cooler_liquid_iv",
+            "HPCA Liquid Cooler IV",
+            GTValues.VA[GTValues.IV],
+            GTValues.VA[GTValues.ZPM],
+            80,
+            5
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_LIQUID_V = createHPCACooler(
+            "hpca_cooler_liquid_v",
+            "HPCA Liquid Cooler V",
+            GTValues.VA[GTValues.LuV],
+            GTValues.VA[GTValues.UV],
+            160,
+            8
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_LIQUID_VI = createHPCACooler(
+            "hpca_cooler_liquid_vi",
+            "HPCA Liquid Cooler VI",
+            GTValues.VA[GTValues.ZPM],
+            GTValues.VA[GTValues.UHV],
+            400,
+            15
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_LIQUID_VII = createHPCACooler(
+            "hpca_cooler_liquid_vii",
+            "HPCA Liquid Cooler VII",
+            GTValues.VA[GTValues.UV],
+            GTValues.VA[GTValues.UEV],
+            1000,
+            40
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_LIQUID_VIII = createHPCACooler(
+            "hpca_cooler_liquid_VIII",
+            "HPCA Liquid Cooler VIII",
+            GTValues.VA[GTValues.UHV],
+            GTValues.VA[GTValues.UIV],
+            4000,
+            100
+    ).register();
+
+    public static MachineDefinition HPCA_COOLER_LIQUID_IX = createHPCACooler(
+            "hpca_cooler_liquid_ix",
+            "HPCA Liquid Cooler IX",
+            GTValues.VA[GTValues.UEV],
+            GTValues.VA[GTValues.UXV],
+            20000,
+            500
     ).register();
 
     // Mets maxCoolantPerTick à autre chose que 0 pour un refroidisseur actif.
