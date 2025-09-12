@@ -228,8 +228,8 @@ public class QilbyMachines {
     public static MachineDefinition HPCA_COOLER_LIQUID_III = createHPCACooler(
             "hpca_cooler_liquid_iii",
             "HPCA Liquid Cooler III",
-            GTValues.VA[GTValues.EV],
-            GTValues.VA[GTValues.LuV],
+            GTValues.VA[GTValues.HV],
+            GTValues.VA[GTValues.IV],
             45,
             4
     ).register();
@@ -237,8 +237,8 @@ public class QilbyMachines {
     public static MachineDefinition HPCA_COOLER_LIQUID_IV = createHPCACooler(
             "hpca_cooler_liquid_iv",
             "HPCA Liquid Cooler IV",
-            GTValues.VA[GTValues.IV],
-            GTValues.VA[GTValues.ZPM],
+            GTValues.VA[GTValues.EV],
+            GTValues.VA[GTValues.LuV],
             80,
             5
     ).register();
@@ -246,8 +246,8 @@ public class QilbyMachines {
     public static MachineDefinition HPCA_COOLER_LIQUID_V = createHPCACooler(
             "hpca_cooler_liquid_v",
             "HPCA Liquid Cooler V",
-            GTValues.VA[GTValues.LuV],
-            GTValues.VA[GTValues.UV],
+            GTValues.VA[GTValues.IV],
+            GTValues.VA[GTValues.ZPM],
             160,
             8
     ).register();
@@ -255,8 +255,8 @@ public class QilbyMachines {
     public static MachineDefinition HPCA_COOLER_LIQUID_VI = createHPCACooler(
             "hpca_cooler_liquid_vi",
             "HPCA Liquid Cooler VI",
-            GTValues.VA[GTValues.ZPM],
-            GTValues.VA[GTValues.UHV],
+            GTValues.VA[GTValues.LuV],
+            GTValues.VA[GTValues.UV],
             400,
             15
     ).register();
@@ -264,17 +264,17 @@ public class QilbyMachines {
     public static MachineDefinition HPCA_COOLER_LIQUID_VII = createHPCACooler(
             "hpca_cooler_liquid_vii",
             "HPCA Liquid Cooler VII",
-            GTValues.VA[GTValues.UV],
-            GTValues.VA[GTValues.UEV],
+            GTValues.VA[GTValues.ZPM],
+            GTValues.VA[GTValues.UHV],
             1000,
             40
     ).register();
 
     public static MachineDefinition HPCA_COOLER_LIQUID_VIII = createHPCACooler(
-            "hpca_cooler_liquid_VIII",
+            "hpca_cooler_liquid_viii",
             "HPCA Liquid Cooler VIII",
-            GTValues.VA[GTValues.UHV],
-            GTValues.VA[GTValues.UIV],
+            GTValues.VA[GTValues.UV],
+            GTValues.VA[GTValues.UEV],
             4000,
             100
     ).register();
@@ -282,8 +282,8 @@ public class QilbyMachines {
     public static MachineDefinition HPCA_COOLER_LIQUID_IX = createHPCACooler(
             "hpca_cooler_liquid_ix",
             "HPCA Liquid Cooler IX",
-            GTValues.VA[GTValues.UEV],
-            GTValues.VA[GTValues.UXV],
+            GTValues.VA[GTValues.UHV],
+            GTValues.VA[GTValues.UIV],
             20000,
             500
     ).register();

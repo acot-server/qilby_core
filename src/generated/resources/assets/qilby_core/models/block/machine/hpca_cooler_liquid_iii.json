@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:block/block",
   "loader": "gtceu:machine",
-  "machine": "qilby_core:hpca_cooler_liquid_x",
+  "machine": "qilby_core:hpca_cooler_liquid_iii",
   "variants": {
     "active=false,hpca_part_damaged=false": {
       "model": {
-        "parent": "qilby_core:block/hpca_cooler_liquid_x_base",
+        "parent": "qilby_core:block/hpca_cooler_liquid_iii_base",
         "textures": {
           "overlay": "gtceu:block/overlay/machine/hpca/active_cooler",
           "overlay_emissive": "gtceu:block/void"
@@ -14,7 +14,7 @@
     },
     "active=false,hpca_part_damaged=true": {
       "model": {
-        "parent": "qilby_core:block/hpca_cooler_liquid_x_base",
+        "parent": "qilby_core:block/hpca_cooler_liquid_iii_base",
         "textures": {
           "overlay": "gtceu:block/overlay/machine/hpca/damaged_advanced",
           "overlay_emissive": "gtceu:block/void"
@@ -23,7 +23,7 @@
     },
     "active=true,hpca_part_damaged=false": {
       "model": {
-        "parent": "qilby_core:block/hpca_cooler_liquid_x_base",
+        "parent": "qilby_core:block/hpca_cooler_liquid_iii_base",
         "textures": {
           "overlay": "gtceu:block/overlay/machine/hpca/active_cooler_active",
           "overlay_emissive": "gtceu:block/overlay/machine/hpca/active_cooler_active_emissive"
@@ -32,7 +32,7 @@
     },
     "active=true,hpca_part_damaged=true": {
       "model": {
-        "parent": "qilby_core:block/hpca_cooler_liquid_x_base",
+        "parent": "qilby_core:block/hpca_cooler_liquid_iii_base",
         "textures": {
           "overlay": "gtceu:block/overlay/machine/hpca/damaged_advanced_active",
           "overlay_emissive": "gtceu:block/overlay/machine/hpca/damaged_advanced_active_emissive"
