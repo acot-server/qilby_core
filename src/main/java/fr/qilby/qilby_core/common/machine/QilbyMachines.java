@@ -2,22 +2,32 @@ package fr.qilby.qilby_core.common.machine;
 
 import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.GTValues;
+import com.gregtechceu.gtceu.api.capability.recipe.IO;
 import com.gregtechceu.gtceu.api.data.RotationState;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility;
 import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties;
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder;
 import com.gregtechceu.gtceu.common.data.GTMaterials;
+import com.gregtechceu.gtceu.common.data.models.GTMachineModels;
+import com.gregtechceu.gtceu.common.machine.multiblock.part.EnergyHatchPartMachine;
+import com.gregtechceu.gtceu.common.machine.multiblock.part.LaserHatchPartMachine;
+import com.gregtechceu.gtceu.utils.FormattingUtil;
 import fr.qilby.qilby_core.common.machine.multiblock.electric.research.GenericComputeComponent;
 import fr.qilby.qilby_core.common.machine.multiblock.electric.research.GenericCoolingComponent;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.client.model.generators.BlockModelBuilder;
 
 import static com.gregtechceu.gtceu.common.data.machines.GTResearchMachines.OVERHEAT_TOOLTIPS;
-import static com.gregtechceu.gtceu.common.data.models.GTMachineModels.createHPCAPartModel;
 import static fr.qilby.qilby_core.common.registry.QilbyRegistration.REGISTRATE;
 
 @SuppressWarnings("all")
 public class QilbyMachines {
+
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // HPCA STUFF                                                                                                     //
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public static MachineDefinition HPCA_COMP_HV = createHPCACompute(
             "hpca_processor_mk1",
@@ -127,7 +137,6 @@ public class QilbyMachines {
             20000
     ).register();
 
-
     static private MachineBuilder<MachineDefinition> createHPCACompute(String id, String name, int upkeepEUt, int maxEUt, int CWUPerTick, int coolingPerTick) {
         return REGISTRATE.machine(id,
                         h -> new GenericComputeComponent(h, upkeepEUt, maxEUt, CWUPerTick, coolingPerTick, true)
@@ -140,17 +149,18 @@ public class QilbyMachines {
                         Component.translatable("gtceu.machine.hpca.component_general.max_eut", maxEUt),
                         Component.translatable("gtceu.machine.hpca.component_type.computation_cwut", CWUPerTick),
                         Component.translatable("gtceu.machine.hpca.component_type.computation_cooling", coolingPerTick)
-                        )
+                )
                 .tooltipBuilder(OVERHEAT_TOOLTIPS)
                 .modelProperty(GTMachineModelProperties.IS_HPCA_PART_DAMAGED, false)
                 .modelProperty(GTMachineModelProperties.IS_ACTIVE, false)
-                .model(createHPCAPartModel(
+                .model(GTMachineModels.createHPCAPartModel(
                         true,
                         GTCEu.id("block/overlay/machine/hpca/advanced_computation"),
                         GTCEu.id("block/overlay/machine/hpca/damaged_advanced")
                 ));
     }
-//Air Cooler
+
+    // Air Cooler
     public static MachineDefinition HPCA_COOLER_AIR_I = createHPCACooler(
             "hpca_cooler_air_i",
             "HPCA Heat Sink I",
@@ -303,16 +313,282 @@ public class QilbyMachines {
                         Component.translatable("gtceu.machine.hpca.component_type.cooler_cooling", coolingAmount)
                 );
         if (maxCoolantPerTick == 0) {
-            x = x.model(createHPCAPartModel(true,
+            x = x.model(GTMachineModels.createHPCAPartModel(true,
                     GTCEu.id("block/overlay/machine/hpca/heat_sink"),
                     GTCEu.id("block/overlay/machine/hpca/damaged_advanced")));
         } else {
-            x = x.model(createHPCAPartModel(true,
+            x = x.model(GTMachineModels.createHPCAPartModel(true,
                             GTCEu.id("block/overlay/machine/hpca/active_cooler"),
                             GTCEu.id("block/overlay/machine/hpca/damaged_advanced")))
                     .tooltips(Component.translatable("gtceu.machine.hpca.component_type.cooler_active_coolant", maxCoolantPerTick, GTMaterials.PCBCoolant.getLocalizedName()));
         }
         return x;
     }
+
+
+
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // ENERGY HATCHES                                                                                                 //
+    // /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static MachineDefinition ENERGY_HATCH_INPUT_4A_LV = createEnergyHatch(
+            "energy_hatch_input_4a_lv",
+            GTValues.VNF[GTValues.LV] + "§r 4§eA§r Energy Hatch",
+            GTValues.LV,
+            4,
+            IO.IN,
+            GTCEu.id("block/machine/part/energy_input_hatch_4a") // ← this should be a model
+    ).register();
+    public static MachineDefinition ENERGY_HATCH_INPUT_4A_MV = createEnergyHatch(
+            "energy_hatch_input_4a_mv",
+            GTValues.VNF[GTValues.MV] + "§r 4§eA§r Energy Hatch",
+            GTValues.MV,
+            4,
+            IO.IN,
+            GTCEu.id("block/machine/part/energy_input_hatch_4a")
+    ).register();
+    public static MachineDefinition ENERGY_HATCH_INPUT_4A_HV = createEnergyHatch(
+            "energy_hatch_input_4a_hv",
+            GTValues.VNF[GTValues.HV] + "§r 4§eA§r Energy Hatch",
+            GTValues.HV,
+            4,
+            IO.IN,
+            GTCEu.id("block/machine/part/energy_input_hatch_4a")
+    ).register();
+
+    public static MachineDefinition ENERGY_HATCH_OUTPUT_4A_LV = createEnergyHatch(
+            "energy_hatch_output_4a_lv",
+            GTValues.VNF[GTValues.LV] + "§r 4§eA§r Dynamo Hatch",
+            GTValues.LV,
+            4,
+            IO.OUT,
+            GTCEu.id("block/machine/part/energy_output_hatch_4a") // ← this should be a model
+    ).register();
+    public static MachineDefinition ENERGY_HATCH_OUTPUT_4A_MV = createEnergyHatch(
+            "energy_hatch_output_4a_mv",
+            GTValues.VNF[GTValues.MV] + "§r 4§eA§r Dynamo Hatch",
+            GTValues.MV,
+            4,
+            IO.OUT,
+            GTCEu.id("block/machine/part/energy_output_hatch_4a")
+    ).register();
+    public static MachineDefinition ENERGY_HATCH_OUTPUT_4A_HV = createEnergyHatch(
+            "energy_hatch_output_4a_hv",
+            GTValues.VNF[GTValues.HV] + "§r 4§eA§r Dynamo Hatch",
+            GTValues.HV,
+            4,
+            IO.OUT,
+            GTCEu.id("block/machine/part/energy_output_hatch_4a")
+    ).register();
+    
+    public static MachineDefinition SUBSTATION_INPUT_HATCH_256_OPV = createSubstationHatch(
+            "substation_input_hatch_256a_opv",
+            GTValues.VNF[GTValues.OpV] + "§r 256§eA§r Substation Energy Hatch",
+            GTValues.OpV,
+            256,
+            IO.IN,
+            GTCEu.id("block/machine/part/energy_input_hatch_64a")
+    ).register();
+    public static MachineDefinition SUBSTATION_INPUT_HATCH_256_MAX = createSubstationHatch(
+            "substation_input_hatch_256a_max",
+            GTValues.VNF[GTValues.MAX] + "§r 256§eA§r Substation Energy Hatch",
+            GTValues.MAX,
+            256,
+            IO.IN,
+            GTCEu.id("block/machine/part/energy_output_hatch_64a")
+    ).register();
+
+    public static MachineDefinition SUBSTATION_OUTPUT_HATCH_256_OPV = createSubstationHatch(
+            "substation_output_hatch_256a_opv",
+            GTValues.VNF[GTValues.OpV] + "§r 256§eA§r Substation Dynamo Hatch",
+            GTValues.OpV,
+            256,
+            IO.OUT,
+            GTCEu.id("block/machine/part/energy_input_hatch_64a")
+    ).register();
+    public static MachineDefinition SUBSTATION_OUTPUT_HATCH_256_MAX = createSubstationHatch(
+            "substation_output_hatch_256a_max",
+            GTValues.VNF[GTValues.MAX] + "§r 256§eA§r Substation Dynamo Hatch",
+            GTValues.MAX,
+            256,
+            IO.OUT,
+            GTCEu.id("block/machine/part/energy_output_hatch_64a")
+    ).register();
+
+    public static MachineDefinition SUBSTATION_INPUT_HATCH_1024_OPV = createSubstationHatch(
+            "substation_input_hatch_1024a_opv",
+            GTValues.VNF[GTValues.OpV] + "§r 1024§eA§r Substation Energy Hatch",
+            GTValues.OpV,
+            1024,
+            IO.IN,
+            GTCEu.id("block/machine/part/energy_input_hatch_64a")
+    ).register();
+    public static MachineDefinition SUBSTATION_INPUT_HATCH_1024_MAX = createSubstationHatch(
+            "substation_input_hatch_1024a_max",
+            GTValues.VNF[GTValues.MAX] + "§r 1024§eA§r Substation Energy Hatch",
+            GTValues.MAX,
+            1024,
+            IO.IN,
+            GTCEu.id("block/machine/part/energy_output_hatch_64a")
+    ).register();
+
+    public static MachineDefinition SUBSTATION_OUTPUT_HATCH_1024_OPV = createSubstationHatch(
+            "substation_output_hatch_1024a_opv",
+            GTValues.VNF[GTValues.OpV] + "§r 1024§eA§r Substation Dynamo Hatch",
+            GTValues.OpV,
+            1024,
+            IO.OUT,
+            GTCEu.id("block/machine/part/energy_input_hatch_64a")
+    ).register();
+    public static MachineDefinition SUBSTATION_OUTPUT_HATCH_1024_MAX = createSubstationHatch(
+            "substation_output_hatch_1024a_max",
+            GTValues.VNF[GTValues.MAX] + "§r 1024§eA§r Substation Dynamo Hatch",
+            GTValues.MAX,
+            1024,
+            IO.OUT,
+            GTCEu.id("block/machine/part/energy_output_hatch_64a")
+    ).register();
+    
+    public static MachineDefinition LASER_INPUT_HATCH_256A_MAX = createLaserHatch(
+            "256a_laser_target_hatch", 
+            GTValues.VNF[GTValues.MAX] + "§r 256§eA§r Laser Target Hatch",
+            GTValues.MAX,
+            256,
+            IO.IN,
+            GTCEu.id("block/machine/part/laser_target_hatch")
+    ).register();
+    public static MachineDefinition LASER_OUTPUT_HATCH_256A_MAX = createLaserHatch(
+            "256a_laser_source_hatch",
+            GTValues.VNF[GTValues.MAX] + "§r 256§eA§r Laser Source Hatch",
+            GTValues.MAX,
+            256,
+            IO.OUT,
+            GTCEu.id("block/machine/part/laser_source_hatch")
+    ).register();
+
+    public static MachineDefinition LASER_INPUT_HATCH_1024A_MAX = createLaserHatch(
+            "1024a_laser_target_hatch",
+            GTValues.VNF[GTValues.MAX] + "§r 1024§eA§r Laser Target Hatch",
+            GTValues.MAX,
+            1024,
+            IO.IN,
+            GTCEu.id("block/machine/part/laser_target_hatch")
+    ).register();
+    public static MachineDefinition LASER_OUTPUT_HATCH_1024A_MAX = createLaserHatch(
+            "1024a_laser_source_hatch",
+            GTValues.VNF[GTValues.MAX] + "§r 1024§eA§r Laser Source Hatch",
+            GTValues.MAX,
+            1024,
+            IO.OUT,
+            GTCEu.id("block/machine/part/laser_source_hatch")
+    ).register();
+
+    public static MachineDefinition LASER_INPUT_HATCH_4096A_MAX = createLaserHatch(
+            "4096a_laser_target_hatch",
+            GTValues.VNF[GTValues.MAX] + "§r 4096§eA§r Laser Target Hatch",
+            GTValues.MAX,
+            4096,
+            IO.IN,
+            GTCEu.id("block/machine/part/laser_target_hatch")
+    ).register();
+    public static MachineDefinition LASER_OUTPUT_HATCH_4096A_MAX = createLaserHatch(
+            "4096a_laser_source_hatch",
+            GTValues.VNF[GTValues.MAX] + "§r 4096§eA§r Laser Source Hatch",
+            GTValues.MAX,
+            4096,
+            IO.OUT,
+            GTCEu.id("block/machine/part/laser_source_hatch")
+    ).register();
+
+    public static MachineDefinition LASER_INPUT_HATCH_16384A_MAX = createLaserHatch(
+            "16384a_laser_target_hatch",
+            GTValues.VNF[GTValues.MAX] + "§r 16384§eA§r Laser Target Hatch",
+            GTValues.MAX,
+            16384,
+            IO.IN,
+            GTCEu.id("block/machine/part/laser_target_hatch")
+    ).register();
+    public static MachineDefinition LASER_OUTPUT_HATCH_16384A_MAX = createLaserHatch(
+            "16384a_laser_source_hatch",
+            GTValues.VNF[GTValues.MAX] + "§r 16384§eA§r Laser Source Hatch",
+            GTValues.MAX,
+            16384,
+            IO.OUT,
+            GTCEu.id("block/machine/part/laser_source_hatch")
+    ).register();
+
+
+    public static MachineBuilder<MachineDefinition> createEnergyHatch(
+            String id, String name, int tier, int amps, IO io, ResourceLocation overlay
+    ) {
+        String iostr = (io == IO.IN) ? "in" : "out";
+        return REGISTRATE.machine(id, h -> new EnergyHatchPartMachine(h, tier, io, amps))
+                .langValue(name)
+                .rotationState(RotationState.ALL)
+                .abilities((io == IO.IN) ? PartAbility.INPUT_ENERGY : PartAbility.OUTPUT_ENERGY)
+                .tooltips(
+                        Component.translatable("gtceu.universal.tooltip.voltage_" + iostr,
+                                FormattingUtil.formatNumbers(GTValues.V[tier]), GTValues.VNF[tier]),
+                        Component.translatable("gtceu.universal.tooltip.amperage_" + iostr, amps),
+                        Component.translatable("gtceu.universal.tooltip.energy_storage_capacity",
+                                FormattingUtil.formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, amps))),
+                        Component.translatable("gtceu.machine.energy_hatch."+ iostr + "put_hi_amp.tooltip")
+                ).model((ctx, prov, builder) -> {
+                    BlockModelBuilder model = prov.models().nested()
+                            .parent(prov.models().getExistingFile(overlay));
+                    GTMachineModels.tieredHullTextures(model, tier);
+                    builder.forAllStatesModels(state -> model);
+                    builder.addReplaceableTextures("bottom", "top", "side");
+                });
+    }
+
+    public static MachineBuilder<MachineDefinition> createSubstationHatch(String id, String name, int tier, int amps, IO io, ResourceLocation overlay) {
+        String iostr = (io == IO.IN) ? "in" : "out";
+        return REGISTRATE.machine(id, h -> new EnergyHatchPartMachine(h, tier, io, amps))
+                .langValue(name)
+                .rotationState(RotationState.ALL)
+                .abilities((io == IO.IN) ? PartAbility.SUBSTATION_INPUT_ENERGY : PartAbility.SUBSTATION_OUTPUT_ENERGY)
+                .tooltips(
+                        Component.translatable("gtceu.universal.tooltip.voltage_"+iostr,
+                                FormattingUtil.formatNumbers(GTValues.V[tier]), GTValues.VNF[tier]),
+                        Component.translatable("gtceu.universal.tooltip.amperage_"+iostr, amps),
+                        Component.translatable("gtceu.universal.tooltip.energy_storage_capacity",
+                                FormattingUtil.formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, amps))),
+                        Component.translatable("gtceu.machine.substation_hatch."+iostr+"put.tooltip")
+                ).model((ctx, prov, builder) -> {
+                    BlockModelBuilder model = prov.models().nested()
+                            .parent(prov.models().getExistingFile(overlay));
+                    GTMachineModels.tieredHullTextures(model, tier);
+                    builder.forAllStatesModels(state -> model);
+                    builder.addReplaceableTextures("bottom", "top", "side");
+                });
+    }
+
+    public static MachineBuilder<MachineDefinition> createLaserHatch(String id, String name, int tier, int amps, IO io, ResourceLocation overlay) {
+        String iostr = (io == IO.IN) ? "in" : "out";
+        return REGISTRATE.machine(id, h -> new LaserHatchPartMachine(h, io, tier, amps))
+                .langValue(name)
+                .rotationState(RotationState.ALL)
+                .abilities((io == IO.IN) ? PartAbility.INPUT_LASER : PartAbility.OUTPUT_LASER)
+                .tooltips(
+                        Component.translatable("gtceu.machine.laser_hatch." + (io == IO.IN ? "target" : "source" ) + ".tooltip"),
+                        Component.translatable("gtceu.machine.laser_hatch.both.tooltip"),
+                        Component.translatable(
+                                "gtceu.universal.tooltip.voltage_" + iostr,
+                                FormattingUtil.formatNumbers(GTValues.V[tier]), GTValues.VNF[tier]),
+                        Component.translatable("gtceu.universal.tooltip.amperage_in", amps),
+                        Component.translatable(
+                                "gtceu.universal.tooltip.energy_storage_capacity",
+                                FormattingUtil.formatNumbers(EnergyHatchPartMachine.getHatchEnergyCapacity(tier, amps))
+                        ),
+                        Component.translatable("gtceu.universal.disabled")
+                ).model((ctx, prov, builder) -> {
+                    BlockModelBuilder model = prov.models().nested()
+                            .parent(prov.models().getExistingFile(overlay));
+                    GTMachineModels.tieredHullTextures(model, tier);
+                    builder.forAllStatesModels(state -> model);
+                    builder.addReplaceableTextures("bottom", "top", "side");
+                });
+    }
+
     public static void init() {}
 }

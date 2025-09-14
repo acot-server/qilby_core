@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "qilby_core:block/machine/energy_hatch_input_4a_lv",
+      "x": 90
+    },
+    "facing=east": {
+      "model": "qilby_core:block/machine/energy_hatch_input_4a_lv",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "qilby_core:block/machine/energy_hatch_input_4a_lv"
+    },
+    "facing=south": {
+      "model": "qilby_core:block/machine/energy_hatch_input_4a_lv",
+      "y": 180
+    },
+    "facing=up": {
+      "gtceu:z": 180,
+      "model": "qilby_core:block/machine/energy_hatch_input_4a_lv",
+      "x": 270
+    },
+    "facing=west": {
+      "model": "qilby_core:block/machine/energy_hatch_input_4a_lv",
+      "y": 270
+    }
+  }
+}
