@@ -15,8 +15,9 @@ public class QilbyMaterials {
     // Alloys
     public static Material EngineeringAlloy;
     public static Material MagitechCompound;
+    public static Material Skyrium;
 
-    // High-Tier scenarium̄
+    // High-Tier scenarium
     public static Material TransparentAlumnium;
     public static Material Wakfu;
     public static Material Stasis;
@@ -49,6 +50,17 @@ public class QilbyMaterials {
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)
                 .color(0x6AAD9A).iconSet(METALLIC)
                 //.components(GTNNMaterials.TerraSteel, 1, GTMaterials.Aluminium, 1, GTMaterials.Chromium, 1)
+                .buildAndRegister();
+
+        Skyrium = Builder("skyrium")
+                .withAllParts()
+                .withTools(10f, 20,10_000, 6, 0)
+                .ingot()
+                .fluid()
+                .dust()
+                .color(0x005500).iconSet(METALLIC)
+                .blastTemp(2_600, BlastProperty.GasTier.MID, GTValues.VHA[GTValues.EV])
+                .element(QilbyElements.Skyrium)
                 .buildAndRegister();
 
         // Scenarium Isotopes
