@@ -1,6 +1,6 @@
 package fr.qilby.qilby_core.common.block;
 
-import static fr.qilby.qilby_core.common.registry.QilbyRegistration.REGISTRATE;
+import static fr.qilby.qilby_core.common.registry.Registration.REGISTRATE;
 
 import com.gregtechceu.gtceu.api.GTCEuAPI;
 import com.gregtechceu.gtceu.api.block.ICoilType;

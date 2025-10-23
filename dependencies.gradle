@@ -2,6 +2,7 @@ dependencies {
 
     modImplementation("curse.maven:gt-985872:6851587")
     // modCompileOnly("curse.maven:gt-985872:6851587")
+    modImplementation(forge.jei.get())
 
     compileOnly(libs.jetbrains.annotations)
 

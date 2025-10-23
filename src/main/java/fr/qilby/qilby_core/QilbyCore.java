@@ -5,12 +5,17 @@ import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.event.MaterialRegistryEvent;
 import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistry;
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
+import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import fr.qilby.qilby_core.common.block.QilbyBlocks;
-import fr.qilby.qilby_core.common.data.QilbyItems;
-import fr.qilby.qilby_core.common.data.QilbyMaterials;
-import fr.qilby.qilby_core.common.machine.QilbyMachines;
-import fr.qilby.qilby_core.common.registry.QilbyRegistration;
-import fr.qilby.qilby_core.data.QilbyDataGen;
+import fr.qilby.qilby_core.common.data.Items;
+import fr.qilby.qilby_core.common.data.Materials;
+import fr.qilby.qilby_core.common.data.RecipeTypes;
+import fr.qilby.qilby_core.common.data.machine.Generators;
+import fr.qilby.qilby_core.common.data.machine.LowTierMultis;
+import fr.qilby.qilby_core.common.data.machine.HPCAComponents;
+import fr.qilby.qilby_core.common.data.machine.Hatches;
+import fr.qilby.qilby_core.common.registry.Registration;
+import fr.qilby.qilby_core.data.DataGen;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -28,18 +33,16 @@ public class QilbyCore  {
     public QilbyCore() {
         QilbyCore.init();
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
+        bus.addGenericListener(GTRecipeType.class, this::registerRecipeTypes);
         bus.addGenericListener(MachineDefinition.class, this::registerMachines);
         bus.register(this);
     }
 
-
-
     public static void init() {
-        QilbyRegistration.REGISTRATE.registerRegistrate();
-        QilbyItems.init();
+        Registration.REGISTRATE.registerRegistrate();
+        Items.init();
         QilbyBlocks.init();
-        QilbyDataGen.init();
-
+        DataGen.init();
     }
 
     @SubscribeEvent
@@ -49,11 +52,18 @@ public class QilbyCore  {
 
     @SubscribeEvent
     public void registerMaterials(MaterialEvent event) {
-        QilbyMaterials.init();
+        Materials.init();
     }
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
-        QilbyMachines.init();
+        HPCAComponents.init();
+        Hatches.init();
+        Generators.init();
+        LowTierMultis.init();
+    }
+
+    private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> ev) {
+        RecipeTypes.init();
     }
 
     public static ResourceLocation id(String path) {

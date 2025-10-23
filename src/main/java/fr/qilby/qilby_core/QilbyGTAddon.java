@@ -2,13 +2,13 @@ package fr.qilby.qilby_core;
 
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
-import fr.qilby.qilby_core.common.data.QilbyElements;
-import fr.qilby.qilby_core.common.registry.QilbyRegistration;
+import fr.qilby.qilby_core.common.data.Elements;
+import fr.qilby.qilby_core.common.registry.Registration;
 
 @com.gregtechceu.gtceu.api.addon.GTAddon
 public class QilbyGTAddon implements IGTAddon {
     @Override
-    public GTRegistrate getRegistrate() { return QilbyRegistration.REGISTRATE; }
+    public GTRegistrate getRegistrate() { return Registration.REGISTRATE; }
 
     @Override
     public void initializeAddon() { QilbyCore.LOGGER.info("Qilby Core GT Addon Loaded"); }
@@ -19,5 +19,6 @@ public class QilbyGTAddon implements IGTAddon {
     }
 
     @Override
-    public void registerElements() {QilbyElements.init();}
+    public void registerElements() {
+        Elements.init();}
 }
