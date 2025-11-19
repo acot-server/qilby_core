@@ -290,10 +290,8 @@ public class Items {
     }
 
     public static <T extends Item> NonNullConsumer<T> modelPredicate(ResourceLocation predicate, GTItems.StackProperty property) {
-        return item -> {
-            DistExecutor.unsafeRunWhenOn(Dist.CLIENT,()->()->
-                ItemProperties.register(item,predicate,(itemstack,c,l,i)-> property.apply(itemstack))
-            );
-        };
+        return item -> DistExecutor.unsafeRunWhenOn(Dist.CLIENT,
+                ()-> ()-> ItemProperties.register(item,predicate,(itemstack,c,l,i)-> property.apply(itemstack))
+        );
     }
 }
