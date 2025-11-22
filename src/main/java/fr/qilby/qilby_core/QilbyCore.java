@@ -56,9 +56,9 @@ public class QilbyCore  {
     }
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
+        Generators.init();
         HPCAComponents.init();
         Hatches.init();
-        Generators.init();
         LowTierMultis.init();
     }
 

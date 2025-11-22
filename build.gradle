@@ -1,10 +1,10 @@
 plugins {
     id 'java-library'
-    id 'org.jetbrains.kotlin.jvm'
     id 'eclipse'
     id 'idea'
+    alias libs.plugins.kotlin.jvm
+    alias libs.plugins.kotlin.plugin
     alias libs.plugins.modDevGradle
-    alias libs.plugins.lombok
 }
 
 /*kotlin {
@@ -56,8 +56,4 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.named("processResources") {
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
-}
-
-lombok {
-    version = "1.18.36"
 }

@@ -43,7 +43,10 @@
   "block.qilby_core.hpca_processor_mk7": "IIΛ˙ʞW ɹossǝɔoɹԀ ⱯƆԀH",
   "block.qilby_core.hpca_processor_mk8": "IIIΛ˙ʞW ɹossǝɔoɹԀ ⱯƆԀH",
   "block.qilby_core.hpca_processor_mk9": "XI˙ʞW ɹossǝɔoɹԀ ⱯƆԀH",
-  "block.qilby_core.large_steam_engine": "ǝuıbuƎ ɯɐǝʇS ǝbɹɐꞀ",
+  "block.qilby_core.large_steam_engine": "ǝuıbuƎ ɯɐǝʇS ΛꞀ",
+  "block.qilby_core.large_steam_engine_ev": "ǝuıbuƎ ɯɐǝʇS ΛƎ",
+  "block.qilby_core.large_steam_engine_hv": "ǝuıbuƎ ɯɐǝʇS ΛH",
+  "block.qilby_core.large_steam_engine_mv": "ǝuıbuƎ ɯɐǝʇS ΛW",
   "block.qilby_core.machine_coil_dark_energy": "ʎbɹǝuƎ ʞɹɐᗡ ןıoƆ ǝuıɥɔɐW",
   "block.qilby_core.machine_coil_dark_matter": "ɹǝʇʇɐW ʞɹɐᗡ ןıoƆ ǝuıɥɔɐW",
   "block.qilby_core.machine_coil_infinity": "ʎʇıuıɟuI ןıoƆ ǝuıɥɔɐW",
@@ -124,6 +127,8 @@
   "material.qilby_core.stellarite": "ǝʇıɹɐןןǝʇS",
   "material.qilby_core.transparent_aluminium": "ɯnıuıɯnןⱯ ʇuǝɹɐdsuɐɹ⟘",
   "material.qilby_core.wakfu": "nɟʞɐM",
-  "qilby_core.machine.lse.tooltip": "ɹ§ǝuıqɹnʇ ɯɐǝʇs ǝbɹɐן ʇsoɔ-ʍoꞀo§ㄥ§",
+  "qilby_core.machine.steam_engine.lubricated": "pǝןqɐuǝ ʇsooq :pǝpıʌoɹd ʇuɐɔıɹqnꞀ",
+  "qilby_core.machine.steam_engine.parallel": "ןǝןןɐɹɐd uı sǝdıɔǝɹ %s buıuunᴚ",
+  "qilby_core.machine.steam_engine.tooltip": "ɹ§ǝuıqɹnʇ ɯɐǝʇs ǝbɹɐן ʇsoɔ-ʍoꞀo§ㄥ§",
   "qilby_core.machine.wave_solderer.tooltip": "ɹ§sʇınɔɹıɔ ɟo buıɹǝpןos ʞןnᗺo§ㄥ§"
 }

@@ -20,7 +20,6 @@ sourcesJar {
     exclude {
         sourceSets.main.allSource.contains it.file
     }
-    from delombok
 }
 
 jar.archiveClassifier = "dev"
@@ -36,10 +35,10 @@ afterEvaluate {
         manifest.attributes([
                 'Specification-Title': project.name,
                 'Specification-Version': mod_version,
-                'Specification-Vendor': 'GTCA Team',
+                'Specification-Vendor': 'Annwan & Lunafreyja',
                 'Implementation-Title': base.archivesName,
                 'Implementation-Version': version,
-                'Implementation-Vendor': 'GTCA Team',
+                'Implementation-Vendor': 'Annwan & Lunafreyja',
         ])
     }
 }

@@ -1,22 +1,24 @@
 dependencies {
 
-    modImplementation("curse.maven:gt-985872:6851587")
-    // modCompileOnly("curse.maven:gt-985872:6851587")
-    modImplementation(forge.jei.get())
-
-    compileOnly(libs.jetbrains.annotations)
-
     jarJar(modApi(forge.gtceu.get()))
-
-    // LDLib
     jarJar(modApi(forge.ldlib.get()))
-
-    // Registrate
     jarJar(modApi(forge.registrate.get()))
-
-    // Configuration
     jarJar(modApi(forge.configuration.get()))
 
+    modImplementation(forge.gtnn.get())
+    modImplementation(forge.gtca.get())
+
+    modImplementation(forge.botania.get())
+    modImplementation(forge.curios.get())
+    modImplementation(forge.patchouli.get())
+
+    modImplementation(forge.adastra.get())
+    modImplementation(forge.resconfig.get())
+    modImplementation(forge.reslib.get())
+    modImplementation(forge.botarium.get())
+
+    modImplementation(forge.jei.get())
+    compileOnly(libs.jetbrains.annotations)
     // Mixin (& Extras)
     annotationProcessor(variantOf(libs.mixin) { classifier("processor") })
     annotationProcessor(forge.mixinExtras.common)

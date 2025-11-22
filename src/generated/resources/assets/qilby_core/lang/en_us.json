@@ -43,7 +43,10 @@
   "block.qilby_core.hpca_processor_mk7": "HPCA Processor MK.VII",
   "block.qilby_core.hpca_processor_mk8": "HPCA Processor MK.VIII",
   "block.qilby_core.hpca_processor_mk9": "HPCA Processor MK.IX",
-  "block.qilby_core.large_steam_engine": "Large Steam Engine",
+  "block.qilby_core.large_steam_engine": "LV Steam Engine",
+  "block.qilby_core.large_steam_engine_ev": "EV Steam Engine",
+  "block.qilby_core.large_steam_engine_hv": "HV Steam Engine",
+  "block.qilby_core.large_steam_engine_mv": "MV Steam Engine",
   "block.qilby_core.machine_coil_dark_energy": "Machine Coil Dark Energy",
   "block.qilby_core.machine_coil_dark_matter": "Machine Coil Dark Matter",
   "block.qilby_core.machine_coil_infinity": "Machine Coil Infinity",
@@ -124,6 +127,8 @@
   "material.qilby_core.stellarite": "Stellarite",
   "material.qilby_core.transparent_aluminium": "Transparent Aluminium",
   "material.qilby_core.wakfu": "Wakfu",
-  "qilby_core.machine.lse.tooltip": "§7§oLow-cost large steam turbine§r",
+  "qilby_core.machine.steam_engine.lubricated": "Lubricant provided: boost enabled",
+  "qilby_core.machine.steam_engine.parallel": "Running %s recipes in parallel",
+  "qilby_core.machine.steam_engine.tooltip": "§7§oLow-cost large steam turbine§r",
   "qilby_core.machine.wave_solderer.tooltip": "§7§oBulk soldering of circuits§r"
 }
