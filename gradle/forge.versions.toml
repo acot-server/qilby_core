@@ -3,10 +3,12 @@ ldlib = "1.0.40.b"
 registrate = "MC1.20-1.3.11"
 configuration = "2.2.0"
 mixinExtras = "0.5.0-rc.3"
-gtceu = "7.1.4"
-jei = "15.20.0.112"
-gtnn = "1.3.4"
-gtca = "2.0.1"
+gtceu = "7.4.0"
+jei = "15.20.0.115"
+gtnn = "1.3.5"
+gtca = "2.1.0-beta"
+gtmu = "2.4.0"
+gtmthings = "6843500"
 botania = "1.20.1-450-forge"
 curios = "5.14.1+1.20.1"
 patchouli = "1.20.1-84.1-forge"
@@ -14,6 +16,9 @@ adastra = "1.15.20"
 botarium = "2.3.4"
 resconfig = "DERs8u7v"
 reslib = "OhsHaCcW"
+deafission = "1.20.1-0.14.0"
+ae2 = "15.4.10"
+guideme = "20.1.14"
 
 [libraries]
 ldlib               = { module = "com.lowdragmc.ldlib:ldlib-forge-1.20.1", version.ref = "ldlib" }
@@ -32,3 +37,8 @@ adastra             = { module = "maven.modrinth:ad-astra", version.ref = "adast
 botarium            = { module = "maven.modrinth:botarium", version.ref = "botarium"}
 resconfig           = { module = "maven.modrinth:resourceful-config", version.ref = "resconfig"}
 reslib              = { module = "maven.modrinth:resourceful-lib", version.ref = "reslib"}
+gtmu                = { module = "maven.modrinth:gregtech-modern-utilities", version.ref = "gtmu"}
+gtmthings           = { module = "curse.maven:gtmthings-1104310", version.ref = "gtmthings"}
+deafission          = { module = "maven.modrinth:deafission", version.ref = "deafission"}
+ae2                 = { module = "maven.modrinth:ae2", version.ref = "ae2" }
+guideme             = { module = "maven.modrinth:guideme", version.ref = "guideme"}

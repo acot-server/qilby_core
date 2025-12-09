@@ -26,47 +26,46 @@ repositories {
         url = "https://maven.gtceu.com"
     }
 
-    exclusiveContent { // FTB mods
-        forRepository { maven { url = "https://maven.ftb.dev/releases" } }
-        filter { includeGroup("dev.ftb.mods") }
+    maven {
+        url = "https://maven.ftb.dev/releases"
+        content { includeGroup("dev.ftb.mods") }
     }
-    exclusiveContent { // TOP
-        forRepository { maven { url = "https://maven.k-4u.nl" } }
-        filter { includeGroup('mcjty.theoneprobe') }
+    maven { url = "https://maven.k-4u.nl"
+        content { includeGroup('mcjty.theoneprobe') }
     }
-    exclusiveContent { // JourneyMap API
-        forRepository { maven { url = "https://jm.gserv.me/repository/maven-public/" } }
-        filter { includeGroup("info.journeymap") }
+    maven {
+        url = "https://jm.gserv.me/repository/maven-public/"
+        content { includeGroup("info.journeymap") }
     }
-    exclusiveContent { // Modrinth Maven
-        forRepository { maven { url = "https://api.modrinth.com/maven" } }
-        filter { includeGroup("maven.modrinth") }
+    maven {
+        url = "https://api.modrinth.com/maven"
+        content { includeGroup("maven.modrinth") }
     }
-    exclusiveContent { // Curseforge Maven
-        forRepository { maven { url = "https://cursemaven.com" } }
-        filter { includeGroup("curse.maven") }
+    maven {
+        url = "https://cursemaven.com"
+        content { includeGroup("curse.maven") }
     }
-    exclusiveContent { // terraformers - EMI
-        forRepository { maven { url = "https://maven.terraformersmc.com/releases/" } }
-        filter { includeGroup("dev.emi") }
+    maven {
+        url = "https://maven.terraformersmc.com/releases/"
+        content { includeGroup("dev.emi") }
     }
-    exclusiveContent { // shedaniel - REI, architectury, cloth-config
-        forRepository { maven { url = "https://maven.shedaniel.me/" } }
-        filter {
+    maven {
+        url = "https://maven.shedaniel.me/"
+        content {
             includeGroupAndSubgroups("me.shedaniel")
             includeGroup("dev.architectury")
         }
     }
-    exclusiveContent { // tterrag - registrate
-        forRepository { maven { url = "https://maven.tterrag.com/" } }
-        filter { includeGroup("com.tterrag.registrate") }
+    maven {
+        url = "https://maven.tterrag.com/"
+        content { includeGroup("com.tterrag.registrate") }
     }
-    exclusiveContent { // Curios
-        forRepository { maven { url = "https://maven.theillusivec4.top/" } }
-        filter { includeGroup('top.theillusivec4.curios')}
+    maven {
+        url = "https://maven.theillusivec4.top/"
+        content { includeGroup('top.theillusivec4.curios')}
     }
-    exclusiveContent { // KotlinForForge
-        forRepository { maven { url = "https://thedarkcolour.github.io/KotlinForForge/" } }
-        filter { includeGroup("thedarkcolour") }
+    maven {
+        url = "https://thedarkcolour.github.io/KotlinForForge/"
+        content { includeGroup("thedarkcolour") }
     }
 }

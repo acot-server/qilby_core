@@ -7,6 +7,9 @@ dependencies {
 
     modImplementation(forge.gtnn.get())
     modImplementation(forge.gtca.get())
+    modImplementation(forge.gtmu.get())
+    modImplementation(forge.gtmthings.get())
+    modImplementation(forge.deafission.get())
 
     modImplementation(forge.botania.get())
     modImplementation(forge.curios.get())
@@ -18,6 +21,9 @@ dependencies {
     modImplementation(forge.botarium.get())
 
     modImplementation(forge.jei.get())
+    modImplementation(forge.ae2.get())
+    modImplementation(forge.guideme.get())
+
     compileOnly(libs.jetbrains.annotations)
     // Mixin (& Extras)
     annotationProcessor(variantOf(libs.mixin) { classifier("processor") })
