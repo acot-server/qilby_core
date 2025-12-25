@@ -9,5 +9,14 @@ object RecipeInit {
         SteamEngineRecipe.init(provider)
         HatchRecipe.init(provider)
         MachineRecipes.init(provider)
+
+        // BOTANIA STUFF
+        AutomatedPureDaisyRecipes.init(provider)
+        AutomatedRunicAltarRecipes.init(provider)
+        AutomatedTAGRecipes.init(provider)
+        ManaInfuserRecipes.init(provider)
+
+        // Other
+        MiscRecipes.init(provider)
     }
 }

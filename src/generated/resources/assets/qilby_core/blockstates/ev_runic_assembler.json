@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "qilby_core:block/machine/ev_runic_assembler",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "qilby_core:block/machine/ev_runic_assembler"
+    },
+    "facing=south": {
+      "model": "qilby_core:block/machine/ev_runic_assembler",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "qilby_core:block/machine/ev_runic_assembler",
+      "y": 270
+    }
+  }
+}

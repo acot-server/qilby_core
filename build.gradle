@@ -7,9 +7,9 @@ plugins {
     alias libs.plugins.modDevGradle
 }
 
-/*kotlin {
+kotlin {
     jvmToolchain(17)
-}*/
+}
 
 group = maven_group
 version = "${mod_version}"
@@ -48,6 +48,12 @@ apply from: "$rootDir/gradle/scripts/repositories.gradle"
 apply from: "$rootDir/dependencies.gradle"
 apply from: "$rootDir/gradle/scripts/resources.gradle"
 
+
+mixin {
+    var refmap = add sourceSets.main, "mixins.${mod_id}.refmap.json"
+    slimJar.from refmap
+    config "${mod_id}.mixins.json"
+}
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = "UTF-8"

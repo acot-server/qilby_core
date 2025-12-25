@@ -1,0 +1,6 @@
+{
+  "parent": "qilby_core:block/overlay/all",
+  "textures": {
+    "overlay": "qilby_core:block/overlay/machine/overlay_mana_in"
+  }
+}

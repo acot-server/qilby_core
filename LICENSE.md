@@ -20,7 +20,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ------
 
 Build system and overall project structure based on GTCA by mordgren and
-sensesgone, Licensed under the terms of the LGPL-3.0 License
+sensesgone, Licensed under the terms of the LGPL-3.0 License.
 
 Code structure and coil declaration based on by PhoenixCore by Phoenixvine,
-Licensed under the te LGPL-3.0 License
+Licensed under the terms of the LGPL-3.0 License.
+
+Code for the botania intergration taken from and/or inspired by GT Frivolous by
+vishtheshnu, licensed under the terms of the LGPL-3.0 License.

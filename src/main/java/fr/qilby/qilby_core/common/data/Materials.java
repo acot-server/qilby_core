@@ -134,7 +134,7 @@ public class Materials {
                 .withTools(120f, 10_000f, 10_000_000, 6, 30)
                 .ingot()
                 .fluid()
-                .color(0xCF2CAB).iconSet(SHINY)
+                .color(0x99BDC7).iconSet(SHINY)
                 .blastTemp(30_000, BlastProperty.GasTier.HIGHEST, GTValues.VHA[GTValues.OpV],200)
                 .rotorStats(500, 500, 25f, 2000000)
                 .cableProperties(GTValues.V[GTValues.MAX], 256, 0, false)

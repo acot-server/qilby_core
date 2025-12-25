@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "qilby_core:lv_botanic_assembler",
+    "qilby_core:mv_botanic_assembler",
+    "qilby_core:hv_botanic_assembler",
+    "qilby_core:ev_botanic_assembler",
+    "qilby_core:lv_botanic_infuser",
+    "qilby_core:mv_botanic_infuser",
+    "qilby_core:hv_botanic_infuser",
+    "qilby_core:ev_botanic_infuser"
+  ]
+}

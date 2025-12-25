@@ -1,9 +1,15 @@
 package fr.qilby.qilby_core;
 
+import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
+import com.gregtechceu.gtceu.api.recipe.lookup.ingredient.MapIngredientTypeManager;
+import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
+import fr.qilby.qilby_core.api.recipe.ingredient.BotaniaManaIngredient;
+import fr.qilby.qilby_core.api.recipe.ingredient.MapBotaniaManaIngredient;
 import fr.qilby.qilby_core.common.data.Elements;
-import fr.qilby.qilby_core.common.data.RecipeTypes;
+import fr.qilby.qilby_core.common.data.QilbyRecipeCaps;
+import fr.qilby.qilby_core.common.data.QilbyRecipeTypes;
 import fr.qilby.qilby_core.common.registry.Registration;
 import fr.qilby.qilby_core.data.recipe.RecipeInit;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -16,7 +22,9 @@ public class QilbyGTAddon implements IGTAddon {
     public GTRegistrate getRegistrate() { return Registration.REGISTRATE; }
 
     @Override
-    public void initializeAddon() { QilbyCore.LOGGER.info("Qilby Core GT Addon Loaded"); }
+    public void initializeAddon() {
+        MapIngredientTypeManager.registerMapIngredient(BotaniaManaIngredient.class, MapBotaniaManaIngredient::convertToMapIngredient);
+    }
 
     @Override
     public String addonModId() {
@@ -25,8 +33,13 @@ public class QilbyGTAddon implements IGTAddon {
 
     @Override
     public void addRecipes(Consumer<FinishedRecipe> provider) {
-        RecipeTypes.init();
+        QilbyRecipeTypes.init();
         RecipeInit.init(provider);
+    }
+
+    @Override
+    public void registerRecipeCapabilities() {
+        QilbyRecipeCaps.init();
     }
 
     @Override

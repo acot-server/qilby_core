@@ -8,7 +8,7 @@ import com.gregtechceu.gtceu.api.pattern.FactoryBlockPattern
 import com.gregtechceu.gtceu.api.pattern.Predicates
 import com.gregtechceu.gtceu.common.data.GTBlocks
 import com.tterrag.registrate.util.entry.BlockEntry
-import fr.qilby.qilby_core.common.data.RecipeTypes
+import fr.qilby.qilby_core.common.data.QilbyRecipeTypes
 import fr.qilby.qilby_core.common.machine.multiblock.SteamEngineMachine
 import net.minecraft.resources.ResourceLocation
 
@@ -34,7 +34,7 @@ object Generators {
         return REGISTRATE.multiblock(name) { SteamEngineMachine(it, tier) }
             .rotationState(RotationState.NON_Y_AXIS)
             .langValue(lang)
-            .recipeTypes(RecipeTypes.LARGE_STEAM_ENGINE)
+            .recipeTypes(QilbyRecipeTypes.LARGE_STEAM_ENGINE)
             .generator(true)
             .recipeModifiers(RecipeModifiers.STEAM_ENGINE_MODIFIER)
             .appearanceBlock(mainCasing)

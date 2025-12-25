@@ -9,6 +9,7 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
         provider.add("qilby_core.machine.steam_engine.parallel", "Running %s recipes in parallel");
         provider.add("qilby_core.machine.steam_engine.lubricated", "Lubricant provided: boost enabled");
         provider.add("qilby_core.machine.wave_solderer.tooltip", "§7§oBulk soldering of circuits§r");
+        provider.add("qilby_core.machine.stored_mana", "Stored Mana: §3%s§r / §b%s§r");
         provider.add("gtceu.wave_solderer", "Wave Solderer");
         provider.add("gtceu.large_steam_engine", "Large Steam Engine");
     }

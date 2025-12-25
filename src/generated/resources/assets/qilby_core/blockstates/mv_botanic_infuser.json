@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "qilby_core:block/machine/mv_botanic_infuser",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "qilby_core:block/machine/mv_botanic_infuser"
+    },
+    "facing=south": {
+      "model": "qilby_core:block/machine/mv_botanic_infuser",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "qilby_core:block/machine/mv_botanic_infuser",
+      "y": 270
+    }
+  }
+}

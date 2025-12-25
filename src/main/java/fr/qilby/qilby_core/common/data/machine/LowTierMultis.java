@@ -10,7 +10,7 @@ import com.gregtechceu.gtceu.api.recipe.OverclockingLogic;
 import com.gregtechceu.gtceu.common.data.GTBlocks;
 import com.gregtechceu.gtceu.common.data.GTRecipeModifiers;
 import com.gregtechceu.gtceu.common.data.models.GTMachineModels;
-import fr.qilby.qilby_core.common.data.RecipeTypes;
+import fr.qilby.qilby_core.common.data.QilbyRecipeTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.Blocks;
 
@@ -22,7 +22,7 @@ public class LowTierMultis {
     public static final MultiblockMachineDefinition WAVE_SOLDERER = REGISTRATE.multiblock("wave_solderer", WorkableElectricMultiblockMachine::new)
             .langValue("Wave Solderer")
             .rotationState(RotationState.NON_Y_AXIS)
-            .recipeType(RecipeTypes.WAVE_SOLDERER)
+            .recipeType(QilbyRecipeTypes.WAVE_SOLDERER)
             .appearanceBlock(GTBlocks.CASING_INVAR_HEATPROOF)
             .recipeModifier(GTRecipeModifiers.ELECTRIC_OVERCLOCK.apply(OverclockingLogic.NON_PERFECT_OVERCLOCK))
             .pattern(def -> FactoryBlockPattern.start()

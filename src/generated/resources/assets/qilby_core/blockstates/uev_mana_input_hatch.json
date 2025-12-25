@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "qilby_core:block/machine/uev_mana_input_hatch"
+    }
+  }
+}
