@@ -4,7 +4,7 @@ tasks.register('slimJar', Jar) {
 }
 
 obfuscation {
-    reobfuscate(tasks.named('slimJar'), sourceSets.main) {
+    reobfuscate(tasks.named('slimJar') as TaskProvider<? extends AbstractArchiveTask>, sourceSets.main) {
         archiveClassifier = "slim"
     }
 }

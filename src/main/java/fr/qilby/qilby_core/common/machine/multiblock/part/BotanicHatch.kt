@@ -31,7 +31,7 @@ import kotlin.math.min
 
 
 
-class BotanicHatch(holder: IMachineBlockEntity, _tier: Int, io: IO): TieredIOPartMachine(holder, _tier, io), WandBindable,
+class BotanicHatch(holder: IMachineBlockEntity, tierKt: Int, io: IO): TieredIOPartMachine(holder, tierKt, io), WandBindable,
     ManaConsumer {
     //// FIELDS
     companion object {
@@ -42,7 +42,7 @@ class BotanicHatch(holder: IMachineBlockEntity, _tier: Int, io: IO): TieredIOPar
     override fun getFieldHolder(): ManagedFieldHolder = MANAGED_FIELD_HOLDER
     @Persisted
     @DescSynced
-    var container: NotifiableManaContainer = NotifiableManaContainer(this, 25000 * _tier, io)
+    var container: NotifiableManaContainer = NotifiableManaContainer(this, 25000 * tierKt, io)
 
     ////// BOTANIA NONSENSE
     override fun onLoad() {
@@ -53,15 +53,15 @@ class BotanicHatch(holder: IMachineBlockEntity, _tier: Int, io: IO): TieredIOPar
         ```
         — Annwan, December 2025
         */
-        if (container._bindingPos == null || !isValidBinding()) setBindingPos(findClosestValidBinding())
+        if (container.bindingPosInternal == null || !isValidBinding()) setBindingPos(findClosestValidBinding())
     }
-    override fun getMana(): Int = container._mana
+    override fun getMana(): Int = container.manaInternal
     override fun receiveMana(mana: Int) {
-        container._mana = min(getMaxMana(), container._mana + mana)
+        container.manaInternal = min(getMaxMana(), container.manaInternal + mana)
         onChanged()
         notifyBlockUpdate()
     }
-    override fun getMaxMana(): Int = container._maxMana
+    override fun getMaxMana(): Int = container.maxManaInternal
     override fun getBindingRadius(): Int = BINDING_RANGE
     override fun canSelect(player: Player, wand: ItemStack, pos: BlockPos, side: Direction): Boolean = true
     override fun bindTo(player: Player, wand: ItemStack, blockPos: BlockPos, side: Direction): Boolean {
@@ -71,10 +71,10 @@ class BotanicHatch(holder: IMachineBlockEntity, _tier: Int, io: IO): TieredIOPar
         }
         return false
     }
-    override fun getBinding(): BlockPos? = container._bindingPos
+    override fun getBinding(): BlockPos? = container.bindingPosInternal
     override fun setBindingPos(bindingPos: BlockPos?) {
-        val changed = !Objects.equals(container._bindingPos, bindingPos)
-        container._bindingPos = bindingPos
+        val changed = !Objects.equals(container.bindingPosInternal, bindingPos)
+        container.bindingPosInternal = bindingPos
         if (changed) {
             onChanged()
             notifyBlockUpdate()
@@ -85,14 +85,14 @@ class BotanicHatch(holder: IMachineBlockEntity, _tier: Int, io: IO): TieredIOPar
         val be = level!!.getBlockEntity(there)
         return if (be is ManaPool) be as ManaPool else null
     }
-    override fun findBoundTile(): ManaPool? = findBindCandidateAt(container._bindingPos)
+    override fun findBoundTile(): ManaPool? = findBindCandidateAt(container.bindingPosInternal)
     fun wouldBeValidBinding(there: BlockPos?) : Boolean = if (
             level == null
             || there == null
             || !level!!.isLoaded(there)
             || MathHelper.distSqr(pos, there) > getBindingRadius() * getBindingRadius()
         ) false else findBindCandidateAt(there) != null
-    fun isValidBinding() = wouldBeValidBinding(container._bindingPos)
+    fun isValidBinding() = wouldBeValidBinding(container.bindingPosInternal)
     override fun findClosestValidBinding(): BlockPos? =
         BotaniaAPI.instance()
             .manaNetworkInstance

@@ -9,7 +9,6 @@ version = "2.0.0"
 displayName = "Qilby Core"
 authors = "Annwan, LunaFreyja"
 description = "Dedicated addon for the Greg's Factory II modpack"
-logoFile = "icon.png"
 displayURL = "https://github.com/acon-server/qilby_core"
 
 [[dependencies.qilby_core]]

@@ -12,7 +12,9 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Blocks;
 
+@SuppressWarnings("unused")
 public class QilbyBlocks {
+    @SuppressWarnings("EmptyMethod")
     public static void init(){}
 
     public static final BlockEntry<CoilBlock> DARK_MATTER_COIL = createCoilBlock(QilbyCoilBlock.CoilType.DARK_MATTER_COIL);
@@ -20,10 +22,6 @@ public class QilbyBlocks {
     public static final BlockEntry<CoilBlock> RUNIC_STELLARITE_COIL = createCoilBlock(QilbyCoilBlock.CoilType.RUNIC_STELLARITE_COIL);
     public static final BlockEntry<CoilBlock> STELLARITE_COIL = createCoilBlock(QilbyCoilBlock.CoilType.STELLARITE_COIL);
     public static final BlockEntry<CoilBlock> THETA_COIL = createCoilBlock(QilbyCoilBlock.CoilType.THETA_COIL);
-
-
-
-
 
     private static BlockEntry<CoilBlock> createCoilBlock(ICoilType coilType){
         var coilBlock = REGISTRATE

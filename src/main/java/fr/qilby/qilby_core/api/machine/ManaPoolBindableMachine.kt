@@ -18,17 +18,12 @@ import net.minecraft.core.Direction
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.level.block.entity.BlockEntity
-import vazkii.botania.api.BotaniaAPI
 import vazkii.botania.api.BotaniaAPIClient
 import vazkii.botania.api.block.WandBindable
 import vazkii.botania.api.block.WandHUD
-import vazkii.botania.api.mana.ManaPool
 import vazkii.botania.client.core.helper.RenderHelper
 import vazkii.botania.common.block.BotaniaBlocks
-import vazkii.botania.common.helper.MathHelper
-import java.util.Objects
 import kotlin.math.max
-import kotlin.math.min
 
 open class ManaPoolBindableMachine(
     holder: IMachineBlockEntity, tier: Int, manaCap: Int = 10000 * tier, vararg args: Object
@@ -55,7 +50,7 @@ open class ManaPoolBindableMachine(
         super.onLoad()
         addHandlerList(RecipeHandlerList.of(IO.IN, container))
 
-        if (container._bindingPos == null || !container.isValidBinding()) setBindingPos(findClosestValidBinding())
+        if (container.bindingPosInternal == null || !container.isValidBinding()) setBindingPos(findClosestValidBinding())
     }
     override fun setBindingPos(bindingPos: BlockPos?) = container.setBindingPos(bindingPos)
     override fun getBindingRadius(): Int = LINK_RANGE

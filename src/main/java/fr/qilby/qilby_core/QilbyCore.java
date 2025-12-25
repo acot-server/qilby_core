@@ -50,8 +50,10 @@ public class QilbyCore  {
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
     public static MaterialRegistry MATERIAL_REGISTRY;
 
+    @SuppressWarnings("removal")
     public QilbyCore() {
         QilbyCore.init();
+        //noinspection removal
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(this::clientSetup);
         bus.addGenericListener(GTRecipeType.class, this::registerRecipeTypes);
@@ -70,7 +72,6 @@ public class QilbyCore  {
                 return Collections.unmodifiableMap(ret);
             });
 
-    private String[] foo = new String[]{};
 
     public static void init() {
         Registration.REGISTRATE.registerRegistrate();
@@ -118,7 +119,7 @@ public class QilbyCore  {
                 return lazyCap;
             }
 
-            public <T> @NotNull LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
+            public <T> @NotNull LazyOptional<T> getCapability(@NotNull Capability<T> cap, Direction side) {
                 return BotaniaForgeClientCapabilities.WAND_HUD.orEmpty(cap, getLazyCap());
             }
         };

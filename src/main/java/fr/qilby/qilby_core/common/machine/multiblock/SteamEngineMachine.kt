@@ -48,8 +48,7 @@ class SteamEngineMachine(holder: IMachineBlockEntity, val theTier: Int) : Workab
         val b : MultiblockDisplayText.Builder = MultiblockDisplayText.builder(textList, isFormed)
             .setWorkingStatus(recipeLogic.isWorkingEnabled, recipeLogic.isActive)
 
-        val lastEUt = recipeLogic.lastRecipe?.outputEUt?.totalEU ?: 0
-        b.addEnergyProductionAmpsLine(GTValues.V[tier] * 3, 3);
+        b.addEnergyProductionAmpsLine(GTValues.V[tier] * 3, 3)
         if (isActive) {
             b.addCustom { it.add(Component.translatable("qilby_core.machine.steam_engine.parallel", lastParallel)) }
             b.addCustom { it.add(Component.translatable("qilby_core.machine.steam_engine.lubricated")) }

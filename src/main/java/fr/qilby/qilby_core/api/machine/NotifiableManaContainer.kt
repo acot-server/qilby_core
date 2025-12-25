@@ -19,23 +19,23 @@ import vazkii.botania.common.helper.MathHelper
 import java.util.Objects
 import kotlin.math.min
 
-class NotifiableManaContainer(machine: MetaMachine, capacity: Int, val _io: IO): NotifiableRecipeHandlerTrait<BotaniaManaIngredient>(machine), ManaConsumer {
+class NotifiableManaContainer(machine: MetaMachine, capacity: Int, val io: IO): NotifiableRecipeHandlerTrait<BotaniaManaIngredient>(machine), ManaConsumer {
     companion object {
         val MANAGED_FIELD_HOLDER =
             ManagedFieldHolder(NotifiableManaContainer::class.java, NotifiableRecipeHandlerTrait.MANAGED_FIELD_HOLDER)
     }
 
     override fun getFieldHolder(): ManagedFieldHolder = MANAGED_FIELD_HOLDER
-    override fun getHandlerIO(): IO = _io
+    override fun getHandlerIO(): IO = io
     @Persisted
     @DescSynced
-    var _mana: Int = 0
+    var manaInternal: Int = 0
     @Persisted
     @DescSynced
-    val _maxMana = capacity
+    val maxManaInternal = capacity
     @Persisted
     @DescSynced
-    var _bindingPos: BlockPos? = null
+    var bindingPosInternal: BlockPos? = null
 
     val recipeHandler: ManaRecipeHandler = ManaRecipeHandler(machine as ManaConsumer)
 
@@ -45,7 +45,7 @@ class NotifiableManaContainer(machine: MetaMachine, capacity: Int, val _io: IO):
         super.onMachineLoad()
         if (machine is ManaConsumer) {
             val manaConsumer = machine as ManaConsumer
-            if (_bindingPos == null) {
+            if (bindingPosInternal == null) {
                 manaConsumer.setBindingPos(manaConsumer.findClosestValidBinding())
             }
             manaSub = machine.subscribeServerTick(manaConsumer::drawManaFromPool)
@@ -64,16 +64,16 @@ class NotifiableManaContainer(machine: MetaMachine, capacity: Int, val _io: IO):
     override fun getContents(): List<BotaniaManaIngredient> = recipeHandler.contents
     override fun getTotalContentAmount(): Double = recipeHandler.totalContentAmount
     override fun getCapability(): RecipeCapability<BotaniaManaIngredient> = recipeHandler.capability
-    override fun getMana(): Int = _mana
-    override fun getMaxMana(): Int = _maxMana
+    override fun getMana(): Int = manaInternal
+    override fun getMaxMana(): Int = maxManaInternal
     override fun receiveMana(mana: Int) {
-        _mana = min(_maxMana, _mana + mana)
+        manaInternal = min(maxManaInternal, manaInternal + mana)
         onChanged()
         machine.notifyBlockUpdate()
     }
     override fun getBindingRadius(): Int = (machine as ManaConsumer).getBindingRadius()
 
-    override fun findBoundTile(): ManaPool? = findBindCandidateAt(_bindingPos)
+    override fun findBoundTile(): ManaPool? = findBindCandidateAt(bindingPosInternal)
     fun findBindCandidateAt(there: BlockPos?): ManaPool? {
         if (machine.level == null || there == null) return null
         val be = machine.level!!.getBlockEntity(there)
@@ -88,7 +88,7 @@ class NotifiableManaContainer(machine: MetaMachine, capacity: Int, val _io: IO):
         ) return false
         return findBindCandidateAt(there) != null
     }
-    fun isValidBinding(): Boolean = wouldBeValidBinding(_bindingPos)
+    fun isValidBinding(): Boolean = wouldBeValidBinding(bindingPosInternal)
     override fun findClosestValidBinding(): BlockPos? =
         BotaniaAPI
             .instance()
@@ -96,10 +96,10 @@ class NotifiableManaContainer(machine: MetaMachine, capacity: Int, val _io: IO):
             .getClosestPool(machine.pos, machine.level, getBindingRadius())
             ?.manaReceiverPos
 
-    fun getBinding(): BlockPos? = if (isValidBinding()) _bindingPos else null
+    fun getBinding(): BlockPos? = if (isValidBinding()) bindingPosInternal else null
     override fun setBindingPos(bindingPos: BlockPos?) {
-        val changed = !Objects.equals(bindingPos, _bindingPos)
-        _bindingPos = bindingPos
+        val changed = !Objects.equals(bindingPos, bindingPosInternal)
+        bindingPosInternal = bindingPos
         if (changed) {
             onChanged()
             machine.notifyBlockUpdate()

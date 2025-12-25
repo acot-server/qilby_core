@@ -13,7 +13,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class QilbyCoilBlock extends ActiveBlock {
-    public ICoilType coilType;
+    public final ICoilType coilType;
     public QilbyCoilBlock(Properties properties,ICoilType coilType) {
         super(properties);
         this.coilType = coilType;

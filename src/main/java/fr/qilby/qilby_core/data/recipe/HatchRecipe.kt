@@ -6,16 +6,12 @@ import com.gregtechceu.gtceu.api.data.tag.TagPrefix
 import com.gregtechceu.gtceu.common.data.GTMachines
 import com.gregtechceu.gtceu.common.data.GTMachines.ENERGY_INPUT_HATCH
 import com.gregtechceu.gtceu.common.data.GTMachines.ENERGY_OUTPUT_HATCH
-import com.gregtechceu.gtceu.common.data.GTMaterialBlocks
-import com.gregtechceu.gtceu.common.data.GTMaterialItems
 import com.gregtechceu.gtceu.common.data.GTMaterials
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes.ASSEMBLER_RECIPES
 import dev.arbor.gtnn.data.GTNNMaterials
 import fr.qilby.qilby_core.QilbyCore
 import fr.qilby.qilby_core.common.data.machine.Hatches
 import net.minecraft.data.recipes.FinishedRecipe
-import net.minecraft.resources.ResourceLocation
-import net.minecraft.tags.ItemTags
 import java.util.function.Consumer
 
 object HatchRecipe {

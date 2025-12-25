@@ -19,7 +19,7 @@ import net.minecraft.world.level.block.Block
 
 object Generators {
     @JvmStatic
-    fun init() { }
+    fun init(): Unit = Unit
 
     fun registerSteamEngine(
         name: String, tier: Int,
@@ -57,7 +57,7 @@ object Generators {
             }
             .tooltips(Component.translatable("qilby_core.machine.steam_engine.tooltip"))
             .workableCasingModel(casingTexture, overlayModel)
-            .register();
+            .register()
     }
 
     val LV_STEAM_ENGINE = registerSteamEngine(

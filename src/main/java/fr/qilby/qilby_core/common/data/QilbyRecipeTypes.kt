@@ -6,8 +6,6 @@ import com.gregtechceu.gtceu.common.data.GTRecipeTypes.*
 import com.gregtechceu.gtceu.common.data.GTSoundEntries
 import com.lowdragmc.lowdraglib.gui.texture.ProgressTexture
 import fr.qilby.qilby_core.api.capability.recipe.BotaniaManaRecipeCapability
-import net.minecraftforge.registries.ForgeRegistries
-import vazkii.botania.common.handler.BotaniaSounds
 
 object QilbyRecipeTypes {
     @JvmField

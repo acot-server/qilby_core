@@ -45,6 +45,7 @@ public class LowTierMultis {
             )
             .register();
 
+    @SuppressWarnings("EmptyMethod")
     public static void init() {
 
     }

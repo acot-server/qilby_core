@@ -20,7 +20,7 @@ import java.util.function.Consumer
 object MachineRecipes {
     @JvmStatic
     fun init(provider: Consumer<FinishedRecipe>) {
-        val criteria: CriterionTriggerInstance = ImpossibleTrigger.TriggerInstance();
+        val criteria: CriterionTriggerInstance = ImpossibleTrigger.TriggerInstance()
         // Steam Engine
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Generators.LV_STEAM_ENGINE.item)
             .pattern("AWA")

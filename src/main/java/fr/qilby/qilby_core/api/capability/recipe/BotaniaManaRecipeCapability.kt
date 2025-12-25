@@ -1,16 +1,10 @@
 package fr.qilby.qilby_core.api.capability.recipe
 
 import com.gregtechceu.gtceu.api.capability.recipe.RecipeCapability
-import com.gregtechceu.gtceu.api.recipe.GTRecipe
-import com.gregtechceu.gtceu.api.recipe.content.Content
 import com.gregtechceu.gtceu.api.recipe.lookup.ingredient.AbstractMapIngredient
-import com.gregtechceu.gtceu.api.registry.GTRegistries
-import com.lowdragmc.lowdraglib.gui.widget.LabelWidget
-import com.lowdragmc.lowdraglib.gui.widget.WidgetGroup
 import fr.qilby.qilby_core.api.recipe.ingredient.BotaniaManaIngredient
 import fr.qilby.qilby_core.api.recipe.ingredient.MapBotaniaManaIngredient
 import it.unimi.dsi.fastutil.objects.ObjectArrayList
-import org.apache.commons.lang3.mutable.MutableInt
 
 class BotaniaManaRecipeCapability :
     RecipeCapability<BotaniaManaIngredient>("mana", 0x000FFF, false, 10, BotaniaManaIngredient.Serializer.INSTANCE) {

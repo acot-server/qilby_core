@@ -1,9 +1,7 @@
 package fr.qilby.qilby_core;
 
-import com.gregtechceu.gtceu.GTCEu;
 import com.gregtechceu.gtceu.api.addon.IGTAddon;
 import com.gregtechceu.gtceu.api.recipe.lookup.ingredient.MapIngredientTypeManager;
-import com.gregtechceu.gtceu.api.registry.GTRegistries;
 import com.gregtechceu.gtceu.api.registry.registrate.GTRegistrate;
 import fr.qilby.qilby_core.api.recipe.ingredient.BotaniaManaIngredient;
 import fr.qilby.qilby_core.api.recipe.ingredient.MapBotaniaManaIngredient;

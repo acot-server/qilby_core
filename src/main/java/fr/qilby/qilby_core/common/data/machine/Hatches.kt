@@ -8,18 +8,14 @@ import com.gregtechceu.gtceu.api.machine.MachineDefinition
 import com.gregtechceu.gtceu.api.machine.multiblock.PartAbility
 import com.gregtechceu.gtceu.api.machine.property.GTMachineModelProperties.IS_FORMED
 import com.gregtechceu.gtceu.api.registry.registrate.MachineBuilder
-import com.gregtechceu.gtceu.common.data.machines.GTMachineUtils
-import com.gregtechceu.gtceu.common.data.models.GTMachineModels
 import com.gregtechceu.gtceu.common.machine.multiblock.part.EnergyHatchPartMachine
 import com.gregtechceu.gtceu.common.machine.multiblock.part.LaserHatchPartMachine
 import com.gregtechceu.gtceu.utils.FormattingUtil
-import fr.qilby.qilby_core.QilbyCore
-import fr.qilby.qilby_core.api.machine.QilbyPartAbility
-import fr.qilby.qilby_core.common.machine.multiblock.part.BotanicHatch
 import fr.qilby.qilby_core.common.registry.Registration
 import net.minecraft.network.chat.Component
 import net.minecraft.resources.ResourceLocation
 
+@Suppress("unused")
 object Hatches {
 
     ////// Low Tier 4A Energy hatches
@@ -307,6 +303,5 @@ object Hatches {
     }
 
     @JvmStatic
-    fun init() {
-    }
+    fun init(): Unit = Unit
 }

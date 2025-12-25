@@ -286,6 +286,7 @@ public class Items {
         return item -> item.attachComponents(components);
     }
 
+    @SuppressWarnings("EmptyMethod")
     public static void init() {
     }
 

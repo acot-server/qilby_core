@@ -4,12 +4,11 @@ import com.gregtechceu.gtceu.api.recipe.content.Content
 import com.gregtechceu.gtceu.api.recipe.content.IContentSerializer
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import fr.qilby.qilby_core.QilbyCore
 
 class BotaniaManaIngredient(val mana: Int) {
     companion object {
         val EMPTY = BotaniaManaIngredient(0)
-        val CODEC = RecordCodecBuilder.create { instance ->
+        val CODEC: Codec<BotaniaManaIngredient> = RecordCodecBuilder.create { instance ->
             instance.group(
                 Codec.INT.fieldOf("mana").forGetter(BotaniaManaIngredient::mana)
             ).apply(instance, ::BotaniaManaIngredient)
@@ -21,17 +20,12 @@ class BotaniaManaIngredient(val mana: Int) {
     override fun toString(): String = "BotaniaManaIngredient{mana=${mana}}"
     class Serializer: IContentSerializer<BotaniaManaIngredient> {
         companion object { val INSTANCE = Serializer() }
-        override fun of(o: Any?): BotaniaManaIngredient? {
-            if (o is Int) {
-                return BotaniaManaIngredient(o)
-            } else if (o is Content) {
-                return o.content as? BotaniaManaIngredient }
-            else if (o is BotaniaManaIngredient) {
-                return o
-            } else {
-                return null
+        override fun of(o: Any?): BotaniaManaIngredient? = when (o) {
+                is Int -> BotaniaManaIngredient(o)
+                is Content -> o.content as? BotaniaManaIngredient
+                is BotaniaManaIngredient -> o
+                else -> null
             }
-        }
 
         override fun defaultValue(): BotaniaManaIngredient = EMPTY
         override fun contentClass(): Class<BotaniaManaIngredient> = BotaniaManaIngredient::class.java
