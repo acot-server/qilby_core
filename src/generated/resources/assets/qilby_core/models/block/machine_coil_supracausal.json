@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "qilby_core:block/coil/t/infinity_coil_block"
+    "all": "qilby_core:block/coil/supracausal/supracausal"
   }
 }

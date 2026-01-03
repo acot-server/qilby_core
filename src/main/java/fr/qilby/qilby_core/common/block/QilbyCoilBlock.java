@@ -32,8 +32,12 @@ public class QilbyCoilBlock extends ActiveBlock {
                 "stellarite",30_000,16,12,8, "qilby_core:stellarite", QilbyCore.id("block/coil/s/machine_stellarite")
         ),
         THETA_COIL(
-                "infinity",100_000,32,16,9, "qilby_core:fabric_of_reality", QilbyCore.id("block/coil/t/machine_theta")
+                "infinity",80_000,20,14,9, "qilby_core:fabric_of_reality", QilbyCore.id("block/coil/t/infinity_coil_block")
+        ),
+        SUPRACAUSAL_COIL(
+                "supracausal", 500_000, 32, 16, 9, "qilby_core:radiant_fabric_of_reality", QilbyCore.id("block/coil/supracausal/supracausal")
         );
+
         @NotNull
         private final String name;
         @Override

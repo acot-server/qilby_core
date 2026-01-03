@@ -22,6 +22,7 @@ public class QilbyBlocks {
     public static final BlockEntry<CoilBlock> RUNIC_STELLARITE_COIL = createCoilBlock(QilbyCoilBlock.CoilType.RUNIC_STELLARITE_COIL);
     public static final BlockEntry<CoilBlock> STELLARITE_COIL = createCoilBlock(QilbyCoilBlock.CoilType.STELLARITE_COIL);
     public static final BlockEntry<CoilBlock> THETA_COIL = createCoilBlock(QilbyCoilBlock.CoilType.THETA_COIL);
+    public static final BlockEntry<CoilBlock> SUPRACAUSAL_COIL = createCoilBlock(QilbyCoilBlock.CoilType.SUPRACAUSAL_COIL);
 
     private static BlockEntry<CoilBlock> createCoilBlock(ICoilType coilType){
         var coilBlock = REGISTRATE
