@@ -18,5 +18,7 @@ object RecipeInit {
 
         // Other
         MiscRecipes.init(provider)
+        // High Tier Stuff
+        TransmutatorRecipes.init(provider)
     }
 }

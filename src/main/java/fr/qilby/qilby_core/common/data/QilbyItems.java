@@ -19,7 +19,7 @@ import static com.gregtechceu.gtceu.common.data.models.GTModels.overrideModel;
 import static fr.qilby.qilby_core.common.registry.Registration.REGISTRATE;
 
 @SuppressWarnings("unused")
-public class Items {
+public class QilbyItems {
     static {
         REGISTRATE.creativeModeTab(() -> CreativeTab.MAIN);
     }

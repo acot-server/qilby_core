@@ -79,6 +79,7 @@
   "block.qilby_core.substation_output_hatch_1024a_opv": "§9§lOpV§r 1024§eA§r Substation Dynamo Hatch",
   "block.qilby_core.substation_output_hatch_256a_max": "§c§lMAX§r 256§eA§r Substation Dynamo Hatch",
   "block.qilby_core.substation_output_hatch_256a_opv": "§9§lOpV§r 256§eA§r Substation Dynamo Hatch",
+  "block.qilby_core.transmutator": "Materials Transmutator",
   "block.qilby_core.uev_mana_input_hatch": "§aUEV Mana Input Hatch",
   "block.qilby_core.uhv_mana_input_hatch": "§4UHV Mana Input Hatch",
   "block.qilby_core.uiv_mana_input_hatch": "§2UIV Mana Input Hatch",

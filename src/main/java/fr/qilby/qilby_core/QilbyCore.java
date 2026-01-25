@@ -9,8 +9,8 @@ import com.gregtechceu.gtceu.api.data.chemical.material.registry.MaterialRegistr
 import com.gregtechceu.gtceu.api.machine.MachineDefinition;
 import com.gregtechceu.gtceu.api.recipe.GTRecipeType;
 import fr.qilby.qilby_core.common.block.QilbyBlocks;
-import fr.qilby.qilby_core.common.data.Items;
-import fr.qilby.qilby_core.common.data.Materials;
+import fr.qilby.qilby_core.common.data.QilbyItems;
+import fr.qilby.qilby_core.common.data.QilbyMaterials;
 import fr.qilby.qilby_core.common.data.QilbyRecipeTypes;
 import fr.qilby.qilby_core.common.data.machine.*;
 import fr.qilby.qilby_core.common.registry.Registration;
@@ -47,6 +47,7 @@ import static vazkii.botania.common.lib.ResourceLocationHelper.prefix;
 @Mod(QilbyCore.MOD_ID)
 public class QilbyCore  {
     public static final String MOD_ID = "qilby_core", NAME = "QilbyCore";
+    @SuppressWarnings("unused")
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
     public static MaterialRegistry MATERIAL_REGISTRY;
 
@@ -75,7 +76,7 @@ public class QilbyCore  {
 
     public static void init() {
         Registration.REGISTRATE.registerRegistrate();
-        Items.init();
+        QilbyItems.init();
         QilbyBlocks.init();
         DataGen.init();
     }
@@ -87,7 +88,7 @@ public class QilbyCore  {
 
     @SubscribeEvent
     public void registerMaterials(MaterialEvent event) {
-        Materials.init();
+        QilbyMaterials.init();
     }
 
     private void registerMachines(GTCEuAPI.RegisterEvent<ResourceLocation, MachineDefinition> event) {
@@ -96,6 +97,7 @@ public class QilbyCore  {
         Hatches.init();
         LowTierMultis.init();
         BotanicMachines.init();
+        HugeMultiblocks.init();
     }
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> ev) {

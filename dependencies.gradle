@@ -8,8 +8,8 @@ dependencies {
     modImplementation(forge.gtnn.get())
     modImplementation(forge.gtca.get())
     modImplementation(forge.gtmu.get())
-    modImplementation(forge.gtmthings.get())
     modImplementation(forge.deafission.get())
+    modImplementation(forge.matrep.get())
 
     modImplementation(forge.botania.get())
     modImplementation(forge.curios.get())

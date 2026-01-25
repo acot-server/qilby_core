@@ -10,7 +10,7 @@ import com.gregtechceu.gtceu.common.data.GTMaterials;
 import fr.qilby.qilby_core.QilbyCore;
 
 
-public class Materials {
+public class QilbyMaterials {
 
     // Alloys
     public static Material EngineeringAlloy;

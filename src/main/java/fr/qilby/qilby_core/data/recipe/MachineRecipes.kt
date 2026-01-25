@@ -7,7 +7,7 @@ import com.gregtechceu.gtceu.api.data.tag.TagPrefix
 import com.gregtechceu.gtceu.common.data.GTItems
 import com.gregtechceu.gtceu.common.data.GTMachines
 import com.gregtechceu.gtceu.common.data.GTMaterials
-import fr.qilby.qilby_core.common.data.Materials
+import fr.qilby.qilby_core.common.data.QilbyMaterials
 import fr.qilby.qilby_core.common.data.machine.Generators
 import net.minecraft.advancements.CriterionTriggerInstance
 import net.minecraft.advancements.critereon.ImpossibleTrigger
@@ -60,11 +60,13 @@ object MachineRecipes {
             .pattern("CSC")
             .pattern("WPW")
             .define('A', ItemTags.create(GTCEu.id("circuits/ev")))
-            .define('W', ChemicalHelper.get(TagPrefix.cableGtOctal, Materials.Wakfu).item)
+            .define('W', ChemicalHelper.get(TagPrefix.cableGtOctal, QilbyMaterials.Wakfu).item)
             .define('C', Generators.HV_STEAM_ENGINE.item)
             .define('S', GTMachines.TITANIUM_DRUM.item)
             .define('P', GTItems.ELECTRIC_PUMP_EV)
             .unlockedBy("criteria", criteria)
             .save(provider)
-        }
+
+        // Transmutator
+    }
 }

@@ -57,6 +57,13 @@ object QilbyRecipeTypes {
         .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.COMPRESSOR)
 
+    val TRANSMUTATOR = register("transmutator", "transmutation")
+        .setEUIO(IO.IN)
+        .setMaxIOSize(9, 4, 9, 4)
+        .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
+        .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
+        .setSound(GTSoundEntries.ARC)
+
     @JvmStatic
     fun init(): Unit = Unit
 }
