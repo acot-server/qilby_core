@@ -25,6 +25,19 @@ public class QilbyItems {
     }
 
     // // BATTERIES
+    public static ItemEntry<ComponentItem> FLAWED_ENERGIUM_CRYSTAL = REGISTRATE
+            .item("flawed_energium_crystal", ComponentItem::create)
+            .model(overrideModel(QilbyCore.id("battery"), 8))
+            .onRegister(modelPredicate(QilbyCore.id("battery"), ElectricStats::getStoredPredicate))
+            .onRegister(attach(ElectricStats.createRechargeableBattery(1_600_000L, GTValues.LV)))
+            .register();
+
+    public static ItemEntry<ComponentItem> FLAWED_LAPOTRON_CRYSTAL = REGISTRATE
+            .item("flawed_lapotron_crystal", ComponentItem::create)
+            .model(overrideModel(QilbyCore.id("battery"), 8))
+            .onRegister(modelPredicate(QilbyCore.id("battery"), ElectricStats::getStoredPredicate))
+            .onRegister(attach(ElectricStats.createRechargeableBattery(3_200_000L, GTValues.MV)))
+            .register();
 
     public static ItemEntry<ComponentItem> DARK_MATTER_CAPACITOR = REGISTRATE
             .item("dark_matter_capacitor", ComponentItem::create)

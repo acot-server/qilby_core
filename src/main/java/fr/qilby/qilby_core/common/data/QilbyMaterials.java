@@ -16,6 +16,8 @@ public class QilbyMaterials {
     public static Material EngineeringAlloy;
     public static Material MagitechCompound;
     public static Material Skyrium;
+    public static Material ImpureEnergium;
+    public static Material ImpureLapotron;
 
     // High-Tier scenarium
     public static Material TransparentAlumnium;
@@ -76,6 +78,21 @@ public class QilbyMaterials {
                 .color(0x005500).iconSet(METALLIC)
                 .blastTemp(2_600, BlastProperty.GasTier.MID, GTValues.VHA[GTValues.EV])
                 .element(Elements.Skyrium)
+                .buildAndRegister();
+
+        ImpureEnergium = Builder("impure_energium")
+                .dust()
+                .color(0x800020)
+                .iconSet(SHINY)
+                .components(GTMaterials.Redstone, 5, GTMaterials.Ruby, 3, GTMaterials.Copper, 1)
+                .buildAndRegister();
+
+        ImpureLapotron = Builder("impure_lapotron")
+                .dust()
+                .gem()
+                .color(0x000080)
+                .iconSet(SHINY)
+                .components(GTMaterials.Lapis, 2, ImpureEnergium, 2, GTMaterials.Silver, 1)
                 .buildAndRegister();
 
         // Scenarium Isotopes

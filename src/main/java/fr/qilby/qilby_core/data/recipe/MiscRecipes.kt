@@ -5,10 +5,14 @@ import com.gregtechceu.gtceu.api.data.chemical.ChemicalHelper
 import com.gregtechceu.gtceu.api.data.tag.TagPrefix
 import com.gregtechceu.gtceu.api.data.tag.TagUtil
 import com.gregtechceu.gtceu.api.recipe.ingredient.SizedIngredient
+import com.gregtechceu.gtceu.common.data.GTMaterials
 import com.gregtechceu.gtceu.common.data.GTRecipeTypes
+import com.gregtechceu.gtceu.data.recipe.CraftingComponent
 import com.gregtechceu.gtceu.data.recipe.GTCraftingComponents
 import dev.arbor.gtnn.data.GTNNMaterials
 import fr.qilby.qilby_core.QilbyCore
+import fr.qilby.qilby_core.common.data.QilbyItems
+import fr.qilby.qilby_core.common.data.QilbyMaterials
 import fr.qilby.qilby_core.common.data.machine.BotanicMachines
 import net.minecraft.data.recipes.FinishedRecipe
 import net.minecraft.world.item.crafting.Ingredient
@@ -17,7 +21,8 @@ import vazkii.botania.common.item.BotaniaItems
 import java.util.function.Consumer
 
 object MiscRecipes {
-    @JvmStatic fun init(p: Consumer<FinishedRecipe>) {
+    @JvmStatic
+    fun init(p: Consumer<FinishedRecipe>) {
         GTRecipeTypes.PACKER_RECIPES.recipeBuilder(QilbyCore.id("manasteel/gt_to_botania"))
             .inputItems(ChemicalHelper.get(TagPrefix.ingot, GTNNMaterials.ManaSteel))
             .circuitMeta(32)
@@ -112,6 +117,53 @@ object MiscRecipes {
             .duration(1200)
             .EUt(GTValues.VA[GTValues.LV].toLong())
             .outputItems(BotanicMachines.BOTANIC_ASSEMBLER[GTValues.LV]!!.block.asItem(), 1)
+            .save(p)
+        GTRecipeTypes.MIXER_RECIPES.recipeBuilder(QilbyCore.id("impure_energium_dust"))
+            .inputItems(
+                ChemicalHelper.get(TagPrefix.dust, GTMaterials.Redstone, 5),
+                ChemicalHelper.get(TagPrefix.dust, GTMaterials.Ruby, 3),
+                ChemicalHelper.get(TagPrefix.dust, GTMaterials.Copper, 1)
+            )
+            .circuitMeta(3)
+            .EUt(GTValues.VA[GTValues.LV].toLong())
+            .duration(200)
+            .outputItems(ChemicalHelper.get(TagPrefix.dust, QilbyMaterials.ImpureEnergium, 9))
+            .save(p)
+        GTRecipeTypes.AUTOCLAVE_RECIPES.recipeBuilder(QilbyCore.id("flawed_energium_crystal"))
+            .inputItems(ChemicalHelper.get(TagPrefix.dust, QilbyMaterials.ImpureEnergium, 9))
+            .inputFluids(GTMaterials.Water, 250)
+            .duration(1000)
+            .EUt(GTValues.VA[GTValues.LV].toLong())
+            .outputItems(QilbyItems.FLAWED_ENERGIUM_CRYSTAL, 1)
+            .save(p)
+        GTRecipeTypes.MIXER_RECIPES.recipeBuilder(QilbyCore.id("impure_lapotron_dust"))
+            .inputItems(
+                ChemicalHelper.get(TagPrefix.dust, GTMaterials.Lapis, 2),
+                ChemicalHelper.get(TagPrefix.dust, QilbyMaterials.ImpureEnergium, 2),
+                ChemicalHelper.get(TagPrefix.dust, GTMaterials.Silver, 1)
+            )
+            .circuitMeta(3)
+            .EUt(GTValues.VA[GTValues.MV].toLong())
+            .duration(200)
+            .outputItems(ChemicalHelper.get(TagPrefix.dust, QilbyMaterials.ImpureLapotron, 5))
+            .save(p)
+        GTRecipeTypes.AUTOCLAVE_RECIPES.recipeBuilder(QilbyCore.id("flawed_lapotron"))
+            .inputItems(ChemicalHelper.get(TagPrefix.dust, QilbyMaterials.ImpureLapotron, 15))
+            .inputFluids(GTMaterials.DistilledWater, 250)
+            .duration(1000)
+            .EUt(GTValues.VA[GTValues.MV].toLong())
+            .outputItems(ChemicalHelper.get(TagPrefix.gem, QilbyMaterials.ImpureLapotron,1))
+            .save(p)
+        GTRecipeTypes.ASSEMBLER_RECIPES.recipeBuilder(QilbyCore.id("flawed_lapotron_crystal"))
+            .inputItems(SizedIngredient.create(TagUtil.createModItemTag("circuits/lv"), 2))
+            .inputItems(ChemicalHelper.get(TagPrefix.gem, QilbyMaterials.ImpureLapotron,1))
+            .duration(600)
+            .EUt(GTValues.VA[GTValues.MV].toLong())
+            .outputItems(QilbyItems.FLAWED_LAPOTRON_CRYSTAL,1)
+            .save(p)
+
+
+
 
     }
 }
