@@ -149,8 +149,8 @@ object BotanicMachines {
     @JvmStatic
     fun registerBotaniaWandHudCaps(consumer: BotaniaBlockEntities.BECapConsumer<WandHUD>) {
         consumer.accept({ ManaPoolBindableMachine.BindableMachineWandHud((it as MetaMachineBlockEntity).metaMachine as ManaPoolBindableMachine) },
-            *BOTANIC_ASSEMBLER.filter { it != null }.map {it!!.blockEntityType}.toTypedArray(),
-            *BOTANIC_INFUSER.filter { it != null }.map {it!!.blockEntityType}.toTypedArray()
+            *BOTANIC_ASSEMBLER.filterNotNull().map { it.blockEntityType}.toTypedArray(),
+            *BOTANIC_INFUSER.filterNotNull().map { it.blockEntityType}.toTypedArray()
         )
         consumer.accept({ BotanicHatch.BindableMachineWandHud((it as MetaMachineBlockEntity).metaMachine as BotanicHatch)}, *MANA_INPUT_HATCHES.map { it.blockEntityType }.toTypedArray())
     }

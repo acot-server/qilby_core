@@ -12,5 +12,10 @@ public class LangHandler extends com.gregtechceu.gtceu.data.lang.LangHandler {
         provider.add("qilby_core.machine.stored_mana", "Stored Mana: §3%s§r / §b%s§r");
         provider.add("gtceu.wave_solderer", "Wave Solderer");
         provider.add("gtceu.large_steam_engine", "Large Steam Engine");
+
+        provider.add("qilby_core.machine.lava_fabricator.production", "Producing: %s §6Lava§r per second");
+        provider.add("qilby_core.machine.lava_fabricator.matter", "Additional Matter provided, production buffs applied");
+        provider.add("qilby_core.machine.lava_fabricator.powered", "Using %s EU/t");
+        provider.add("qilby_core.machine.lava_fabricator.low_powered", "Insufficient power, working in degraded mode.");
     }
 }

@@ -64,6 +64,12 @@ object QilbyRecipeTypes {
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressTexture.FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.ARC)
 
+    val LAVA_FABRICATOR = register("lava_fabricator", "generation")
+        .setEUIO(IO.IN).setMaxIOSize(0, 0, 2, 1)
+        .setSlotOverlay(false, false, GuiTextures.BOXED_OVERLAY).setProgressBar(GuiTextures.PROGRESS_BAR_ARROW,
+            ProgressTexture.FillDirection.ALWAYS_FULL)
+        .setSound(GTSoundEntries.FIRE)
+
     @JvmStatic
     fun init(): Unit = Unit
 }

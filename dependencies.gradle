@@ -8,17 +8,11 @@ dependencies {
     modImplementation(forge.gtnn.get())
     modImplementation(forge.gtca.get())
     modImplementation(forge.gtmu.get())
-    modImplementation(forge.deafission.get())
     modImplementation(forge.matrep.get())
 
     modImplementation(forge.botania.get())
     modImplementation(forge.curios.get())
     modImplementation(forge.patchouli.get())
-
-    modImplementation(forge.adastra.get())
-    modImplementation(forge.resconfig.get())
-    modImplementation(forge.reslib.get())
-    modImplementation(forge.botarium.get())
 
     modImplementation(forge.jei.get())
     modImplementation(forge.ae2.get())

@@ -11,14 +11,9 @@ gtmu = "2.4.0"
 botania = "1.20.1-450-FORGE"
 curios = "5.14.1+1.20.1"
 patchouli = "1.20.1-84.1-forge"
-adastra = "1.15.20"
-botarium = "2.3.4"
-resconfig = "DERs8u7v"
-reslib = "OhsHaCcW"
-deafission = "1.20.1-0.14.0"
 ae2 = "15.4.10"
 guideme = "20.1.14"
-matrep = "1.20.1-2.0.0-bata"
+matrep = "1.20.1-2.1.0-bata"
 
 [libraries]
 ldlib               = { module = "com.lowdragmc.ldlib:ldlib-forge-1.20.1", version.ref = "ldlib" }
@@ -33,12 +28,7 @@ gtca                = { module = "maven.modrinth:gt-community-additions", versio
 botania             = { module = "vazkii.botania:Botania", version.ref = "botania"}
 curios              = { module = "maven.modrinth:curios", version.ref = "curios"}
 patchouli           = { module = "maven.modrinth:patchouli", version.ref = "patchouli"}
-adastra             = { module = "maven.modrinth:ad-astra", version.ref = "adastra"}
-botarium            = { module = "maven.modrinth:botarium", version.ref = "botarium"}
-resconfig           = { module = "maven.modrinth:resourceful-config", version.ref = "resconfig"}
-reslib              = { module = "maven.modrinth:resourceful-lib", version.ref = "reslib"}
 gtmu                = { module = "maven.modrinth:gregtech-modern-utilities", version.ref = "gtmu"}
-deafission          = { module = "maven.modrinth:deafission", version.ref = "deafission"}
 ae2                 = { module = "maven.modrinth:ae2", version.ref = "ae2" }
 guideme             = { module = "maven.modrinth:guideme", version.ref = "guideme"}
 matrep              = { module = "maven.modrinth:materialreplicationmodern", version.ref = "matrep"}

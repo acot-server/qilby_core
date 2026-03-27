@@ -98,6 +98,7 @@ public class QilbyCore  {
         LowTierMultis.init();
         BotanicMachines.init();
         HugeMultiblocks.init();
+        FluidGenerators.init();
     }
 
     private void registerRecipeTypes(GTCEuAPI.RegisterEvent<ResourceLocation, GTRecipeType> ev) {
